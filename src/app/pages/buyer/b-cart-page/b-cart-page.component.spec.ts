@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BDummyContentComponent } from './b-dummy-content.component';
+import { BCartPageComponent } from './b-cart-page.component';
 
-describe('BDummyContentComponent', () => {
-  let component: BDummyContentComponent;
-  let fixture: ComponentFixture<BDummyContentComponent>;
+describe('BCartPageComponent', () => {
+  let component: BCartPageComponent;
+  let fixture: ComponentFixture<BCartPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BDummyContentComponent ]
+      declarations: [ BCartPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BDummyContentComponent);
+    fixture = TestBed.createComponent(BCartPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

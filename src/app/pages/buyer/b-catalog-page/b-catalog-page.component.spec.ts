@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainAppComponent } from './main-app.component';
+import { BCatalogPageComponent } from './b-catalog-page.component';
 
-describe('MainAppComponent', () => {
-  let component: MainAppComponent;
-  let fixture: ComponentFixture<MainAppComponent>;
+describe('BCatalogPageComponent', () => {
+  let component: BCatalogPageComponent;
+  let fixture: ComponentFixture<BCatalogPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainAppComponent ]
+      declarations: [ BCatalogPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainAppComponent);
+    fixture = TestBed.createComponent(BCatalogPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
