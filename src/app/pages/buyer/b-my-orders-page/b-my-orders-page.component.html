@@ -1,0 +1,90 @@
+<section class="row g-3">
+
+  <div class="col-12 col-md-12 col-lg-2">
+    <div class="card">
+      <div class="card-header">
+        Filter
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h5 class="card-title">Status</h5>
+          <div class="form-check" *ngFor="let input of ['Pending', 'Paid', 'Delivery', 'Completed', 'Cancelled']">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">{{ input }}</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-12 col-lg-10">
+
+    <div class="row mb-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <span>1-12 over 60 orders</span>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Sort By
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href class="dropdown-item">Newest</a></li>
+            <li><a href class="dropdown-item">Oldest</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-cols-1">
+      <div class="col" *ngFor="let product of products">
+        <div class="card" style="border: none;">
+
+          <div class="d-flex align-items-center justify-content-between">
+            <svg class="bd-placeholder-img rounded" width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img"
+              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ product.image }}</text>
+            </svg>
+      
+            <div class="card-body py-1">
+              <span class="badge text-bg-success">Completed</span>
+              <h5 class="card-title fw-normal mb-0">{{ product.name }}</h5>
+              <small class="pb-2">{{ product.price | currency }} x 2</small>
+              <br>
+              <small class="fw-light">+1 other</small>
+            </div>
+            
+            <div class="card-body text-end">
+              <small>Total</small>
+              <h5 class="card-title">{{ product.price | currency }}</h5>
+            </div>
+            
+            <!-- <a routerLink="" class="btn btn-link stretched-link"></a> -->
+          </div>
+    
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+</section>

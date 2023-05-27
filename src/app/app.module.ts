@@ -13,6 +13,7 @@ import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.compon
 import { BCatalogPageComponent } from './pages/buyer/b-catalog-page/b-catalog-page.component';
 import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
+import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
 
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 import { SHeaderComponent } from './components/seller/s-header/s-header.component';
@@ -34,6 +35,7 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     BCatalogPageComponent,
     BCheckoutPageComponent,
     BProductDetailPageComponent,
+    BMyOrdersPageComponent,
 
     BHomePageComponent,
     BCartPageComponent,

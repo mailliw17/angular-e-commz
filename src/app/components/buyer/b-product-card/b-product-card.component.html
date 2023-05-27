@@ -9,7 +9,7 @@
     </svg>
 
     <div class="card-body">
-      <h5 class="card-title" style="font-weight: 400;">{{ item.name }}</h5>
+      <h5 class="card-title fw-normal">{{ item.name }}</h5>
       <p><strong>{{ item.price | currency }}</strong></p>
       <small class="card-text">{{ item.description }}</small>
     </div>
@@ -35,7 +35,7 @@
       </svg>
 
       <div class="card-body py-1">
-        <h5 class="card-title" style="font-weight: 400;">{{ item.name }}</h5>
+        <h5 class="card-title fw-normal">{{ item.name }}</h5>
         <h4 class="card-title pb-2">{{ item.price | currency }}</h4>
         <form class="d-flex align-items-center input-group-sm">
           <input class="form-control" type="number" min="1" aria-label="Search" value="1" style="width: 80px;">
@@ -47,7 +47,6 @@
         </form>
       </div>
     </div>
-    <hr />
 
   </div>
 </ng-template>

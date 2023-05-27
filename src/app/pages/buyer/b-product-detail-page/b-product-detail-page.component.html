@@ -13,7 +13,7 @@
       <div class="col-lg-4">
         <div class="card-body">
           <div class="mb-3">
-            <h4 class="card-title" style="font-weight: 400;">{{ product.name }}</h4>
+            <h4 class="card-title fw-normal">{{ product.name }}</h4>
             <small class="text-muted">
               <span class="badge rounded-pill text-bg-light">
                 <i class="bi bi-star-fill"></i> 5.0
@@ -35,13 +35,13 @@
             <input class="form-control" type="number" min="1" max="100" aria-label="Search" value="1" style="width: 80px;">
             <div class="ms-3">Stock: {{ product.stock }}</div>
           </form>
-          <hr />
+          <hr>
 
           <div class="d-flex align-items-center justify-content-between mb-3">
             <h6 class="card-title">Subtotal</h6>
             <h3 class="card-title">{{ product.price | currency }}</h3>
           </div>
-          <hr />
+          <hr>
 
           <div class="d-grid gap-2">
             <button routerLink="/cart" type="button" class="btn btn-secondary">Add to Cart</button>
