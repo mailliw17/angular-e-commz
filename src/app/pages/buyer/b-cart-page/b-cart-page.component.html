@@ -2,10 +2,11 @@
   <p class="h3 pb-3">Shopping Cart</p>
   <div class="row g-3">
     <div class="col-lg-8 px-5">
-
-      <!-- product cart here -->
-      <app-b-product-card></app-b-product-card>
-
+      <div class="row row-cols-1">
+        <div class="col" *ngFor="let item of [1,2,3,4]">
+          <app-b-product-card [props]="{type: '2'}"></app-b-product-card>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-4">
