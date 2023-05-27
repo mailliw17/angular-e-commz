@@ -45,15 +45,15 @@ const routes: Routes = [
     },
   },
   {
-    path: 'seller/dashboard',
-    component: SDashboardPageComponent,
+    path: 'product-detail/:id',
+    component: BProductDetailPageComponent,
     data: {
       // title: 'Home - audiBCA',
     },
   },
   {
-    path: 'product-detail/1',
-    component: BProductDetailPageComponent,
+    path: 'seller/dashboard',
+    component: SDashboardPageComponent,
     data: {
       // title: 'Home - audiBCA',
     },
