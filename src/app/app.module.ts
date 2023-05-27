@@ -13,6 +13,7 @@ import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.compon
 import { BProductCardComponent } from './components/buyer/b-product-card/b-product-card.component';
 import { BCatalogPageComponent } from './pages/buyer/b-catalog-page/b-catalog-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
+import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page
     BProductCardComponent,
     BCatalogPageComponent,
     BProductDetailPageComponent,
+    SDashboardPageComponent,
   ],
   imports: [
     BrowserModule,
