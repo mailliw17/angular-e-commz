@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'angular-e-commz';
   urlSplit : String
-
-  constructor(public route: ActivatedRoute) { }
 
   ngOnInit() {
     var a = window.location.pathname.split('/');
