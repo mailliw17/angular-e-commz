@@ -19,6 +19,7 @@ import { SHeaderComponent } from './components/seller/s-header/s-header.componen
 import { SFooterComponent } from './components/seller/s-footer/s-footer.component';
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashb
     SFooterComponent,
 
     SDashboardPageComponent,
+
+    CurrencyPipe,
   ],
   imports: [
     BrowserModule,

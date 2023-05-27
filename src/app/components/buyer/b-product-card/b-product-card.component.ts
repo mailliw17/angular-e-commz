@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./b-product-card.component.scss']
 })
 export class BProductCardComponent implements OnInit {
-  @Input() props: { type: string; }
+  @Input() item: {} = {};
+  @Input() type: string = 'card';
 
   constructor() { }
 

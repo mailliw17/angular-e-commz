@@ -29,8 +29,8 @@
 
     <div class="col-lg-8 px-3">
       <div class="row row-cols-1">
-        <div class="col" *ngFor="let item of [1,2,3,4]">
-          <app-b-product-card [props]="{type: '2'}"></app-b-product-card>
+        <div class="col" *ngFor="let product of products">
+          <app-b-product-card [item]="product" type="list"></app-b-product-card>
         </div>
       </div>
     </div>
