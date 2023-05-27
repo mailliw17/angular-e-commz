@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="d-flex flex-column" style="min-height: 100vh;">
+  <!-- ngIf utk header buyer / seller -->
+  <app-b-header></app-b-header>
+
+  <div class="container p-3 mb-3 flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- ngIf utk footer buyer / seller -->
+  <app-b-footer></app-b-footer>
+</div>
