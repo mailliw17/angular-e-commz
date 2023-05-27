@@ -1,15 +1,7 @@
 <section class="mb-5">
   <p class="h3 pb-3">Shopping Cart</p>
   <div class="row g-3">
-    <div class="col-lg-8 px-5">
-      <div class="row row-cols-1">
-        <div class="col" *ngFor="let item of [1,2,3,4]">
-          <app-b-product-card [props]="{type: '2'}"></app-b-product-card>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4">
+    <div class="col-lg-4 order-lg-last px-3">
       <div class="card bg-light border-light">
 
         <div class="card-body">
@@ -25,16 +17,22 @@
 
           <div class="d-flex align-items-center justify-content-between mb-3">
             <h6 class="card-title">Total</h6>
-            <h2 class="card-title">Rp 210.000</h2>
+            <h3 class="card-title">Rp210.000</h3>
           </div>
+          <hr />
 
-          <div class="d-grid gap-2">
-            <button routerLink="/checkout" type="button" class="btn btn-secondary">Checkout</button>
-          </div>
+          <button routerLink="/checkout" type="button" class="w-100 btn btn-secondary">Checkout</button>
         </div>
 
       </div>
     </div>
 
+    <div class="col-lg-8 px-3">
+      <div class="row row-cols-1">
+        <div class="col" *ngFor="let item of [1,2,3,4]">
+          <app-b-product-card [props]="{type: '2'}"></app-b-product-card>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

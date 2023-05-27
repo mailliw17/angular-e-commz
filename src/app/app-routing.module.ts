@@ -5,6 +5,7 @@ import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.compon
 import { BCatalogPageComponent } from './pages/buyer/b-catalog-page/b-catalog-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
+import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout-page.component';
 
 const routes: Routes = [  
   {
@@ -36,7 +37,14 @@ const routes: Routes = [
       // title: 'Home - audiBCA',
     },
   },
-   {
+  {
+    path: 'checkout',
+    component: BCheckoutPageComponent,
+    data: {
+      // title: 'Home - audiBCA',
+    },
+  },
+  {
     path: 'seller/dashboard',
     component: SDashboardPageComponent,
     data: {
