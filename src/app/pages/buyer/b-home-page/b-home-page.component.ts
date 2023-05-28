@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/buyer/product.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-b-home-page',
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/services/buyer/product.service';
 })
 export class BHomePageComponent implements OnInit {
 
-  products = [];
+  products:Product[];
 
   constructor(private productService: ProductService) { }
 

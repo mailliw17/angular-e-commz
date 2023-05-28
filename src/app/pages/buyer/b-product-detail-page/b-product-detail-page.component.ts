@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/buyer/product.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-b-product-detail-page',
@@ -10,7 +11,7 @@ import { ProductService } from 'src/app/services/buyer/product.service';
 export class BProductDetailPageComponent implements OnInit {
 
   productId = '';
-  product = {};
+  product:Product
   
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 

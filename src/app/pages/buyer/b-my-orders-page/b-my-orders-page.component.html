@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <hr>
+    <hr class="mb-1">
 
     <div class="row row-cols-1">
       <div class="col" *ngFor="let product of products">
@@ -55,17 +55,17 @@
               <br>
               <small class="fw-light">+1 other</small>
             </div>
+
+            <a routerLink="" class="btn btn-link stretched-link"></a>
             
             <div class="card-body text-end">
               <small>Total</small>
               <h5 class="card-title">{{ product.price | currency }}</h5>
             </div>
-            
-            <!-- <a routerLink="" class="btn btn-link stretched-link"></a> -->
           </div>
-    
+
         </div>
-        <hr>
+        <hr class="my-1">
       </div>
     </div>
 
