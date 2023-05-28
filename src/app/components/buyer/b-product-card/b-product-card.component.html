@@ -38,10 +38,10 @@
         <h5 class="card-title fw-normal">{{ item.name }}</h5>
         <h4 class="card-title pb-2">{{ item.price | currency }}</h4>
         <form class="d-flex align-items-center input-group-sm">
-          <input class="form-control" type="number" min="1" aria-label="Search" value="1" style="width: 80px;">
+          <input class="form-control" type="number" min="1" aria-label="Search" [value]="item.qty" style="width: 80px;">
           <div class="ms-3 me-2">{{ item.stock }}</div>
           |
-          <button type="button" class="btn btn-link text-danger">
+          <button type="button" (click)="onDeleteProduct.emit(item.id)" class="btn btn-link text-danger">
             <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
           </button>
         </form>

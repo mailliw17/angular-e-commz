@@ -30,7 +30,7 @@
     <div class="col-lg-8 px-3">
       <div class="row row-cols-1">
         <div class="col" *ngFor="let item of cart">
-          <app-b-product-card [item]="item" type="list"></app-b-product-card>
+          <app-b-product-card [item]="item" (onDeleteProduct)="onDeleteCart($event)" type="list"></app-b-product-card>
           <hr class="my-1">
         </div>
       </div>

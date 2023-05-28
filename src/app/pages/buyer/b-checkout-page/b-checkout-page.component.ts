@@ -16,7 +16,6 @@ export class BCheckoutPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.onFetchCart();
-
   }
 
   onFetchCart() {

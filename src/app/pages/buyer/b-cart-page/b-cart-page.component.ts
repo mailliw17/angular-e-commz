@@ -22,4 +22,9 @@ export class BCartPageComponent implements OnInit {
     this.shipping = this.cartService.fetchShipping();
     [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
   }
+
+  onDeleteCart(id: string) {
+    this.cartService.delete(id);
+    this.onFetchCart();
+  }
 }

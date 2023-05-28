@@ -6,7 +6,7 @@
 
         <div class="card-body">
           <div class="d-flex align-items-center justify-content-between" *ngFor="let item of cart">
-            <small class="text-muted">{{item.name}} (1 item)</small>
+            <small class="text-muted">{{ item.name }} ({{ item.qty }} items)</small>
             <small>{{ item.price | currency }}</small>
           </div>
           <hr>
