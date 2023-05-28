@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/services/buyer/product.service';
+
 import { Product } from 'src/app/models/product.model';
+
+import { ProductService } from 'src/app/services/buyer/product.service';
+import { CartService } from 'src/app/services/buyer/cart.service';
 
 @Component({
   selector: 'app-b-product-detail-page',
@@ -13,7 +16,7 @@ export class BProductDetailPageComponent implements OnInit {
   productId = '';
   product:Product
   
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params.id;
@@ -22,5 +25,9 @@ export class BProductDetailPageComponent implements OnInit {
 
   onFetchProduct(id: string) {
     this.product = this.productService.fetchById(id);
+  }
+
+  onAddToCart(product: Product) {
+    this.cartService.add(product);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/services/buyer/product.service';
+import { CartService } from 'src/app/services/buyer/cart.service';
 
 @Component({
   selector: 'app-b-cart-page',
@@ -8,15 +8,18 @@ import { ProductService } from 'src/app/services/buyer/product.service';
 })
 export class BCartPageComponent implements OnInit {
 
-  products = [];
+  cart = [];
+  subtotal = 0;
+  shipping = 0;
 
-  constructor(private productService: ProductService) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.onFetchProducts();
+    this.onFetchCart();
   }
 
-  onFetchProducts() {
-    this.products = this.productService.fetch();
+  onFetchCart() {
+    this.shipping = this.cartService.fetchShipping();
+    [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
   }
 }
