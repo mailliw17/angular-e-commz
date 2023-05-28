@@ -25,14 +25,15 @@ export class CartService {
     return this.shipping;
   }
 
-  add(product: Product) {
+  add(payload : {product: Product, qty: number}) {
+    let {product, qty} = payload;
     let index = this.cartIds.indexOf(product.id);
-    if (index != -1) this.cart[index].qty += 1;
+    if (index != -1) this.cart[index].qty += qty;
     else {
       let payload = {
         id: product.id, //required to db
         price: product.price, //required to db
-        qty: 1, //required to db
+        qty: qty > product.stock ? product.stock : qty, //required to db
         name: product.name,
         image: product.image,
         stock: product.stock

@@ -1,5 +1,9 @@
 <section class="mb-5">
   <p class="h3 pb-3">Shopping Cart</p>
+  <div *ngIf="cart.length; then filled else empty"></div>
+</section>
+
+<ng-template #filled>
   <div class="row g-3">
     <div class="col-lg-4 order-lg-last px-3">
       <div class="card bg-light border-light">
@@ -36,4 +40,17 @@
       </div>
     </div>
   </div>
-</section>
+</ng-template>
+
+<ng-template #empty>
+  <div class="p-5 text-center">
+    <i class="bi bi-emoji-frown" style="font-size: 48px;"></i>
+    <h1 class="text-body-emphasis">Oh no! Your cart is empty</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      Start shopping by clicking button below!
+    </p>
+    <button routerLink="/" class="btn btn-primary px-5 mb-5" type="button">
+      Start shopping
+    </button>
+  </div>
+</ng-template>

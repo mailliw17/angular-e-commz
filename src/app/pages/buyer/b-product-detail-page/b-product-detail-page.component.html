@@ -31,10 +31,10 @@
 
       <div class="col-lg-4">
         <div class="mx-3 my-5 bg-light card-body rounded">
-          <form class="d-flex align-items-center">
-            <input class="form-control" type="number" min="1" max="100" aria-label="Search" value="1" style="width: 80px;">
+          <div class="d-flex align-items-center">
+            <input type="number" class="form-control" name="qty" [(ngModel)]="qty" min="1" [max]="product.stock" style="width: 80px;">
             <div class="ms-3">Stock: {{ product.stock }}</div>
-          </form>
+          </div>
           <hr>
 
           <div class="d-flex align-items-center justify-content-between mb-3">

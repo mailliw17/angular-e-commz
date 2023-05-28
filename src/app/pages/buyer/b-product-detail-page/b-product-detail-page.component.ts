@@ -14,7 +14,8 @@ import { CartService } from 'src/app/services/buyer/cart.service';
 export class BProductDetailPageComponent implements OnInit {
 
   productId = '';
-  product:Product
+  product:Product;
+  qty = 1;
   
   constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
@@ -27,7 +28,11 @@ export class BProductDetailPageComponent implements OnInit {
     this.product = this.productService.fetchById(id);
   }
 
-  onAddToCart(product: Product) {
-    this.cartService.add(product);
+  onAddToCart() {
+    let payload = {
+      product: this.product,
+      qty: this.qty
+    }
+    this.cartService.add(payload);
   }
 }
