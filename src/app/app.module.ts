@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,12 +14,14 @@ import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.compon
 import { BCatalogPageComponent } from './pages/buyer/b-catalog-page/b-catalog-page.component';
 import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
+import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
 
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 import { SHeaderComponent } from './components/seller/s-header/s-header.component';
 import { SFooterComponent } from './components/seller/s-footer/s-footer.component';
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashb
     BCatalogPageComponent,
     BCheckoutPageComponent,
     BProductDetailPageComponent,
+    BMyOrdersPageComponent,
 
     BHomePageComponent,
     BCartPageComponent,
@@ -45,10 +49,13 @@ import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashb
     SFooterComponent,
 
     SDashboardPageComponent,
+
+    CurrencyPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

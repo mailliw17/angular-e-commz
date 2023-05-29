@@ -1,6 +1,6 @@
-<section class="row mb-5">
+<section class="row g-3">
 
-  <div class="col-12 col-lg-2">
+  <div class="col-12 col-md-12 col-lg-2">
     <div class="card">
       <div class="card-header">
         Filter
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="col-12 col-lg-10">
+  <div class="col-12 col-md-12 col-lg-10">
 
     <div class="row mb-3">
       <div class="d-flex justify-content-between align-items-center">
@@ -48,12 +48,12 @@
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 mb-3">
-      <div class="col" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12]">
-        <app-b-product-card [props]="{type: '1'}"></app-b-product-card>
+      <div class="col" *ngFor="let product of products">
+        <app-b-product-card [item]="product"></app-b-product-card>
       </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row">
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-end">
           <li class="page-item disabled">

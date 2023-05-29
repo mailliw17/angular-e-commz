@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/buyer/product.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-b-catalog-page',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BCatalogPageComponent implements OnInit {
 
-  constructor() { }
+  products:Product[];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.onFetchProducts();
   }
 
+  onFetchProducts() {
+    this.products = this.productService.fetch();
+  }
 }

@@ -1,51 +1,52 @@
-<div *ngIf="props.type == '1'; then type_1 else type_2">here is ignored</div>
+<div *ngIf="type == 'card'; then type_card else type_list"></div>
 
-<ng-template #type_1>
-  <div class="card shadow-sm">
+<ng-template #type_card>
+  <div class="card h-100 shadow-sm">
     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
       aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
       <rect width="100%" height="100%" fill="#55595c" />
+      <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ item.image }}</text>
     </svg>
 
     <div class="card-body">
-      <h5 class="card-title" style="font-weight: 400;">Product Title</h5>
-      <p><strong>Rp100.000</strong></p>
-      <small class="card-text">This is a description</small>
-      <div class="d-flex justify-content-between align-items-center">
-        <small class="text-muted">
-          <span class="badge rounded-pill text-bg-light">
-            <i class="bi bi-star-fill"></i> 5.0
-          </span> | Sold 10
-        </small>
-        <a routerLink="/product-detail/1" class="btn btn-link stretched-link"></a>
-      </div>
+      <h5 class="card-title fw-normal">{{ item.name }}</h5>
+      <p><strong>{{ item.price | currency }}</strong></p>
+      <small class="card-text">{{ item.description }}</small>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mt-auto px-3 pb-3">
+      <small class="text-muted">
+        <span class="badge rounded-pill text-bg-light">
+          <i class="bi bi-star-fill"></i> 5.0
+        </span> | Sold 10
+      </small>
+      <a routerLink="/product-detail/{{item.id}}" class="btn btn-link stretched-link"></a>
     </div>
   </div>
 </ng-template>
 
-<ng-template #type_2>
+<ng-template #type_list>
   <div class="card" style="border: none;">
 
     <div class="d-flex align-items-center justify-content-between">
       <svg class="bd-placeholder-img rounded" width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img"
         aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
         <rect width="100%" height="100%" fill="#55595c" />
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ item.image }}</text>
       </svg>
 
       <div class="card-body py-1">
-        <h5 class="card-title" style="font-weight: 400;">Product Title</h5>
-        <h4 class="card-title pb-2">Rp100.000</h4>
+        <h5 class="card-title fw-normal">{{ item.name }}</h5>
+        <h4 class="card-title pb-2">{{ item.price | currency }}</h4>
         <form class="d-flex align-items-center input-group-sm">
-          <input class="form-control" type="number" min="1" aria-label="Search" value="1" style="width: 80px;">
-          <div class="ms-3 me-2">Stock: 4</div>
+          <input class="form-control" type="number" min="1" aria-label="Search" [value]="item.qty" style="width: 80px;">
+          <div class="ms-3 me-2">{{ item.stock }}</div>
           |
-          <button type="button" class="btn btn-link text-danger">
+          <button type="button" (click)="onDeleteProduct.emit(item.id)" class="btn btn-link text-danger">
             <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
           </button>
         </form>
       </div>
     </div>
-    <hr />
 
   </div>
 </ng-template>
