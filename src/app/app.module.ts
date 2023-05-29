@@ -22,6 +22,12 @@ import { SFooterComponent } from './components/seller/s-footer/s-footer.componen
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { SManageProductPageComponent } from './pages/seller/s-manage-product-page/s-manage-product-page.component';
+import { SProfilePageComponent } from './pages/seller/s-profile-page/s-profile-page.component';
+import { SChangePasswordPageComponent } from './pages/seller/s-change-password-page/s-change-password-page.component';
+import { SSimpleReportPageComponent } from './pages/seller/s-simple-report-page/s-simple-report-page.component';
+import { SAddProductPageComponent } from './pages/seller/s-add-product-page/s-add-product-page.component';
+import { SEditProductPageComponent } from './pages/seller/s-edit-product-page/s-edit-product-page.component';
 
 @NgModule({
   declarations: [
@@ -51,11 +57,23 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     SDashboardPageComponent,
 
     CurrencyPipe,
+
+    SManageProductPageComponent,
+
+    SProfilePageComponent,
+
+    SChangePasswordPageComponent,
+
+    SSimpleReportPageComponent,
+
+    SAddProductPageComponent,
+
+    SEditProductPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

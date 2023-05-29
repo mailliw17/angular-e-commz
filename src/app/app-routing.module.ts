@@ -9,15 +9,19 @@ import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.compon
 import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout-page.component';
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
+import { SManageProductPageComponent } from './pages/seller/s-manage-product-page/s-manage-product-page.component';
+import { SProfilePageComponent } from './pages/seller/s-profile-page/s-profile-page.component';
+import { SChangePasswordPageComponent } from './pages/seller/s-change-password-page/s-change-password-page.component';
+import { SSimpleReportPageComponent } from './pages/seller/s-simple-report-page/s-simple-report-page.component';
+import { SAddProductPageComponent } from './pages/seller/s-add-product-page/s-add-product-page.component';
+import { SEditProductPageComponent } from './pages/seller/s-edit-product-page/s-edit-product-page.component';
 
 const routes: Routes = [  
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
-    data: {
-      // title: 'Home - audiBCA',
-    },
+    data: { },
   }, {
     path: 'home',
     component: BHomePageComponent,
@@ -45,6 +49,31 @@ const routes: Routes = [
   }, {
     path: 'seller/dashboard',
     component: SDashboardPageComponent,
+    data: {},
+  },{
+    path: 'seller/manage-product',
+    component: SManageProductPageComponent,
+    data: {},
+  },{
+    path: 'seller/profile',
+    component: SProfilePageComponent,
+    data: {},
+  },{
+    path: 'seller/change-password',
+    component: SChangePasswordPageComponent,
+    data: {},
+  },{
+    path: 'seller/simple-report',
+    component: SSimpleReportPageComponent,
+    data: {},
+  },{
+    path: 'seller/add-product',
+    component: SAddProductPageComponent,
+    data: {},
+  },
+  {
+    path: 'seller/edit-product/:id',
+    component: SEditProductPageComponent,
     data: {},
   },
 

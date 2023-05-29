@@ -1,52 +1,55 @@
+<h1>DASHBOARD</h1>
+<hr>
 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
   <div class="col">
     <div class="card mb-4 rounded-3 shadow-sm">
       <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">Total Produk</h4>
+        <h4 class="my-0 fw-normal">Total Product</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">13<small class="text-muted fw-light"> produk</small></h1>
+        <h1 class="card-title pricing-card-title">13<small class="text-muted fw-light"> product</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>Produk aktif</li>
+          <li>Active Product</li>
           <!-- <li>2 GB of storage</li>
           <li>Email support</li>
           <li>Help center access</li> -->
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Detail</button>
+        <button type="button" routerLink="/seller/manage-product" class="w-100 btn btn-lg btn-primary">Manage
+          Product</button>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card mb-4 rounded-3 shadow-sm">
       <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">Total Pesanan</h4>
+        <h4 class="my-0 fw-normal">Total Order</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">1 <small class="text-muted fw-light">pesanan</small></h1>
+        <h1 class="card-title pricing-card-title">1 <small class="text-muted fw-light">order</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>Pesanan yang perlu dikirim</li>
+          <li>Orders that need to be shipped</li>
           <!-- <li>10 GB of storage</li>
           <li>Priority email support</li>
           <li>Help center access</li> -->
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-primary">Atur Pesanan</button>
+        <button type="button" class="w-100 btn btn-lg btn-primary">Manage orders</button>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-      <div class="card-header py-3 text-bg-primary border-primary">
-        <h4 class="my-0 fw-normal">Total Pendapatan</h4>
+    <div class="card mb-4 rounded-3 shadow-sm ">
+      <div class="card-header py-3 ">
+        <h4 class="my-0 fw-normal">Simple Report</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">Rp 100.000<small class="text-muted fw-light"></small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Pendapatan bulan ini</li>
-          <!-- <li>15 GB of storage</li>
-          <li>Phone and email support</li>
-          <li>Help center access</li> -->
+        <!-- <h1 class="card-title pricing-card-title">Rp 100.000<small class="text-muted fw-light"></small></h1> -->
+        <ul class="list-unstyled mt-2 mb-2">
+          <li>Total month's income</li>
+          <li>Total month's order</li>
+          <li>Total Visitors</li>
+          <li>Best selling product</li>
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-primary">Report</button>
+        <button type="button" class="w-100 btn btn-lg btn-primary" routerLink="/seller/simple-report">Report</button>
       </div>
     </div>
   </div>
