@@ -1,0 +1,32 @@
+<form action="">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Name</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Image URL</label>
+    <input type="email" class="form-control">
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">Description</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="exampleFormControlInput1" class="form-label">Price</label>
+    <input type="number" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Stock</label>
+    <input type="number" class="form-control">
+  </div>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Category</option>
+    <option value="1">Makanan</option>
+    <option value="2">Minuman</option>
+    <option value="3">Pewangi</option>
+  </select>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+    <button class="btn btn-danger me-md-2" type="button" routerLink="/seller/manage-product">Cancel</button>
+    <button class="btn btn-primary" type="button">Add</button>
+  </div>
+</form>

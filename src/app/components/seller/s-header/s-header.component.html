@@ -11,29 +11,25 @@
       <!-- <form class="col-auto flex-grow-1 mx-3">
         <input type="search" class="form-control" placeholder="Search..." aria-label="Search" routerLink="/catalog">
       </form> -->
-      <h1>Welcome back Seller</h1>
+      <h1>Welcome back, Seller 1</h1>
 
       <div class="col-lg-1"></div>
 
       <div class="col-auto">
-        <!-- <button type="button" class="btn btn-link link-dark position-relative" routerLink="/cart">
-          <i class="bi bi-cart3" style="font-size: 20px;"></i>
-          <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="top: 30%; left: 90%">
-            1
-          </span>
-        </button> -->
-        <ul class="nav nav-pills">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </li>
-        </ul>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-link link-dark dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-person" style="font-size: 20px;"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="seller/profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="seller/change-password">Change Password</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
