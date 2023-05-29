@@ -1,6 +1,6 @@
 <section class="mb-5">
   <p class="h3 pb-3">Checkout</p>
-  <div class="row g-3">
+  <form [formGroup]="checkoutForm" class="row g-3">
     <div class="col-lg-4 order-lg-last px-3">
       <div class="card bg-light border-light">
 
@@ -27,22 +27,32 @@
           </div>
           <hr>
 
-          <button routerLink="/payment" type="button" class="w-100 btn btn-secondary">Checkout</button>
+          <button type="submit" (click)="onSubmit()" class="w-100 btn btn-secondary">Checkout</button>
         </div>
       </div>
     </div>
 
     <div class="col-lg-8 px-3">
       <h4 class="mb-3">Shipping address</h4>
-
-      <form class="needs-validation" novalidate>
         <div class="row g-3">
           <div class="col-12">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="building / street / city / postal code" required>
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
+            <label for="address" class="form-label" for="address">Address</label>
+            <input
+              type="text"
+              class="form-control {{submitted ? 'ng-submitted' : ''}}"
+              formControlName="address"
+              id="address"
+              placeholder="building / street / city / postal code"
+              required
+            >
+            <span
+              *ngIf="
+                (submitted && checkoutForm.get('address').errors) || 
+                (checkoutForm.get('address').errors && checkoutForm.get('address').touched)"
+              style="color: red;"
+            >
+              Please enter your shipping address!
+            </span>
           </div>
         </div>
   
@@ -51,18 +61,28 @@
         <h4 class="mb-3">Payment</h4>
   
         <div class="my-3">
-          <div class="form-check">
-            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-            <label class="form-check-label" for="credit">BCA Virtual Account</label>
+          <div class="form-check" *ngFor="let method of payments">
+            <input
+              type="radio"
+              class="form-check-input {{submitted ? 'ng-submitted' : ''}}"
+              [id]="method.value"
+              formControlName="payment"
+              [value]="method.value"
+              required
+            >
+            <label class="form-check-label" [for]="method.value">{{ method.name }}</label>
           </div>
-          <div class="form-check">
-            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-            <label class="form-check-label" for="debit">QRIS</label>
-          </div>
+          <span
+            *ngIf="
+              (submitted && checkoutForm.get('payment').errors) || 
+              (checkoutForm.get('payment').errors && checkoutForm.get('payment').touched)"
+            style="color: red;"
+          >
+            Please select a payment method!
+          </span>
         </div>
-      </form>
   
       <hr class="my-4">
     </div>
-  </div>
+  </form>
 </section>

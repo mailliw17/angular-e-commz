@@ -25,7 +25,15 @@ export class CartService {
     return this.shipping;
   }
 
-  add(payload : {product: Product, qty: number}) {
+  updateSubtotal() {
+    if (this.cart.length)
+      this.subtotal = this.cart?.reduce((sum, item) => sum += item.price*item.qty, 0);
+    else
+      this.subtotal = 0;
+    return this.subtotal;
+  }
+
+  addItem(payload : {product: Product, qty: number}) {
     let {product, qty} = payload;
     let index = this.cartIds.indexOf(product.id);
     if (index != -1) {
@@ -45,17 +53,15 @@ export class CartService {
     }
   }
 
-  updateSubtotal() {
-    if (this.cart.length)
-      this.subtotal = this.cart?.reduce((sum, item) => sum += item.price*item.qty, 0);
-    else
-      this.subtotal = 0;
-    return this.subtotal;
-  }
-
-  delete(id: string) {
+  removeItem(id: string) {
     let index = this.cartIds.indexOf(id);
     this.cart.splice(index, 1);
     this.cartIds.splice(index, 1);
+  }
+
+  clearCart() {
+    this.cartIds = [];
+    this.cart = [];
+    this.subtotal = 0;
   }
 }

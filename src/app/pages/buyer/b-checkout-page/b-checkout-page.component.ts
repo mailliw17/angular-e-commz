@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/services/buyer/cart.service';
 
 @Component({
@@ -8,6 +9,18 @@ import { CartService } from 'src/app/services/buyer/cart.service';
 })
 export class BCheckoutPageComponent implements OnInit {
 
+  payments = [
+    {name: 'BCA Virtual Account', value: 'va_bca'},
+    {name: 'QRIS', value: 'qris'}
+  ];
+
+  checkoutForm = new FormGroup({
+    'address': new FormControl(null, [Validators.required]),
+    'payment': new FormControl(null, [Validators.required]),
+  })
+
+  submitted = false;
+  
   cart = [];
   subtotal = 0;
   shipping = 0;
@@ -21,5 +34,13 @@ export class BCheckoutPageComponent implements OnInit {
   onFetchCart() {
     this.shipping = this.cartService.fetchShipping();
     [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.checkoutForm.invalid) {
+      return;
+    }
+    console.log(this.checkoutForm.value);
   }
 }

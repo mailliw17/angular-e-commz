@@ -28,7 +28,7 @@ export class BCartPageComponent implements OnInit {
   }
 
   onDeleteCart(id: string) {
-    this.cartService.delete(id);
+    this.cartService.removeItem(id);
     this.onFetchCart();
   }
 }
