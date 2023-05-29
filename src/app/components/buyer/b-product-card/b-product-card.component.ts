@@ -9,6 +9,7 @@ export class BProductCardComponent implements OnInit {
   @Input() item: {} = {};
   @Input() type: string = 'card';
 
+  @Output() onUpdateQty = new EventEmitter<string>();
   @Output() onDeleteProduct = new EventEmitter<string>();
 
   constructor() { }

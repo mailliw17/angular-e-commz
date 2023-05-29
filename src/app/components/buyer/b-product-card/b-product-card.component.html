@@ -38,7 +38,7 @@
         <h5 class="card-title fw-normal">{{ item.name }}</h5>
         <h4 class="card-title pb-2">{{ item.price | currency }}</h4>
         <form class="d-flex align-items-center input-group-sm">
-          <input class="form-control" type="number" min="1" aria-label="Search" [value]="item.qty" style="width: 80px;">
+          <input type="number" class="form-control" name="qty" [(ngModel)]="item.qty" min="1" [max]="item.stock" (change)="onUpdateQty.emit()" style="width: 80px;">
           <div class="ms-3 me-2">{{ item.stock }}</div>
           |
           <button type="button" (click)="onDeleteProduct.emit(item.id)" class="btn btn-link text-danger">
