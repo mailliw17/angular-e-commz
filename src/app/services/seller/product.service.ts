@@ -25,7 +25,7 @@ export class ProductService {
       )
   } 
 
-  getProduct() {
+  getProducts() {
     return this.http.get<any>(BASE_URL)
       .pipe(
         map(
@@ -34,5 +34,24 @@ export class ProductService {
           }
         )
       )
+  }
+
+  getProductById(id: String) {
+    return this.http.get<any>(BASE_URL +'/' + id)
+      .pipe(
+        map(
+          (res:any) => {
+            return res
+          }
+        )
+      )
+  }
+
+  deleteProduct(id: String) {
+    return this.http.delete(BASE_URL +'/' + id)
+  }
+
+  updateProduct(id:String, data:any) {
+    return this.http.put(BASE_URL +'/' + id, data)
   }
 }

@@ -8,29 +8,41 @@ import { ProductService } from 'src/app/services/seller/product.service';
   styleUrls: ['./s-manage-product-page.component.scss']
 })
 export class SManageProductPageComponent implements OnInit {
+  products:any = []
+
   constructor(
     private router: Router,
     private productService : ProductService,
     ) { }
 
   ngOnInit(): void {
-    this.productService.getProduct()
+   this.getProducts()
+  }
+
+  getProducts() {
+    this.productService.getProducts()
+    .subscribe(
+      res => {
+        this.products = res
+        console.log(this.products);
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  deleteProduct(id:String) {
+    this.productService.deleteProduct(id)
       .subscribe(
         res => {
-          console.log(res);
+          alert('Product deleted')
+          this.ngOnInit()
         },
         err => {
           console.log(err);
         }
       )
-  }
-
-  deleteProduct() {
-    alert('Product deleted')
-
-    // ubah status pengiriman ke DELIVERY
-    this.router.navigate(['seller/manage-product']);
-
   }
 
 }
