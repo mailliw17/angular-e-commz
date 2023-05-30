@@ -1,15 +1,15 @@
 <div class="d-flex flex-column" style="min-height: 100vh;">
   <!-- ngIf utk header buyer / seller -->
-  <app-b-header *ngIf="urlSplit !== 'seller'"></app-b-header>
-  <app-s-header *ngIf="urlSplit == 'seller'"></app-s-header>
+  <app-b-header *ngIf="(urlSplit !== 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-b-header>
+  <app-s-header *ngIf="(urlSplit == 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-s-header>
 
   <div class="container p-3 mb-3 flex-grow-1">
     <router-outlet></router-outlet>
   </div>
 
   <!-- ngIf utk footer buyer / seller -->
-  <app-b-footer *ngIf="urlSplit !== 'seller'"></app-b-footer>
-  <app-s-footer *ngIf="urlSplit == 'seller'"></app-s-footer>
+  <app-b-footer *ngIf="(urlSplit !== 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-b-footer>
+  <app-s-footer *ngIf="(urlSplit == 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-s-footer>
 
 </div>
 
