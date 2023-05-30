@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
+import { OrderService } from 'src/app/services/buyer/order.service';
+import { Order } from 'src/app/models/order.model';
+
 
 @Component({
   selector: 'app-b-payment-page',
@@ -9,19 +12,16 @@ import { Router } from '@angular/router'
 })
 export class BPaymentPageComponent implements OnInit {
 
-  id: string = '';
+  orderId: string;
   paymentMethod: string = '';
   total: number = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.route.queryParams
       .subscribe(params => {
-        // todo: check if order id status is pending
-
-        // if pending
-        this.id = params.order_id;
+        this.orderId = params.order_id;
         this.paymentMethod = params.method;
         this.total = parseInt(params.total);
       }
@@ -29,8 +29,21 @@ export class BPaymentPageComponent implements OnInit {
   }
 
   payOrder() {
-    // todo: get order by id
-    // todo: update order status to paid
+    this.orderService.getOrderById(this.orderId)
+    .subscribe(
+      res => {
+        if (res.status == 'PENDING')
+          res.status = 'PAID';
+          this.orderService.updateOrder(this.orderId, res)
+          .subscribe(
+            res => { alert('Order Updated') },
+            err => { console.log(err) }
+          )
+      },
+      err => { console.log(err) }
+    )
+
+    
 
     this.router.navigate(['']);
   }

@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/services/buyer/cart.service';
+import { OrderService } from 'src/app/services/buyer/order.service';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-b-checkout-page',
@@ -10,23 +12,23 @@ import { CartService } from 'src/app/services/buyer/cart.service';
 })
 export class BCheckoutPageComponent implements OnInit {
 
-  payments = [
-    {name: 'BCA Virtual Account', value: 'va_bca'},
-    {name: 'QRIS', value: 'qris'}
-  ];
-
-  checkoutForm = new FormGroup({
-    'address': new FormControl(null, [Validators.required]),
-    'payment': new FormControl(null, [Validators.required]),
-  })
-
-  submitted = false;
+  order_uuid = uuid.v4();
   
   cart = [];
   subtotal = 0;
   shipping = 0;
 
-  constructor(private router: Router, private cartService: CartService) { }
+  submitted = false;
+  checkoutForm = new FormGroup({
+    'address': new FormControl(null, [Validators.required]),
+    'payment': new FormControl(null, [Validators.required]),
+  })
+  payments = [
+    {name: 'BCA Virtual Account', value: 'va_bca'},
+    {name: 'QRIS', value: 'qris'}
+  ];
+
+  constructor(private router: Router, private cartService: CartService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.onFetchCart();
@@ -43,13 +45,30 @@ export class BCheckoutPageComponent implements OnInit {
       return;
     }
     
-    // todo: send to order service
+    let order_payload = {
+      id: this.order_uuid,
+      user_id: 'user1',
+      dest_address: this.checkoutForm.value.address,
+      shipping_price: this.shipping,
+      waybill_number: Math.round(Math.random() * 10000),
+      status: 'PENDING',
+      total_price: this.subtotal + this.shipping,
+      payment_method: this.checkoutForm.value.payment,
+      created_on: new Date()
+    }    
+
+    this.orderService.postOrder(order_payload)
+      .subscribe(
+        res => { alert('Order Added') },
+        err => { console.log(err) }
+      )
+
+    // post order details
 
     this.cartService.clearCart();
-    
     this.router.navigate(['/payment'], {
       queryParams: {
-        order_id: 'id',
+        order_id: this.order_uuid,
         method: this.checkoutForm.value.payment,
         total: this.subtotal + this.shipping
       }
