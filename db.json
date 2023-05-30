@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "name": "Ut pariatur Sed rem",
+      "image": "Et ducimus quasi de",
+      "description": "Corporis eu ut hic l",
+      "price": 29,
+      "stock": 60,
+      "category_id": "Elektronik",
+      "id": "c16e13cb-97fa-49b4-831d-63b2c68da9a1",
+      "seller_id": "c16e13cb-97fa-49b4-831d-63b2c68da9a1",
+      "created_on": "2023-05-30T10:22:46.812Z"
+    },
+    {
+      "name": "Hic odit eos nesciu",
+      "image": "Similique atque et e",
+      "description": "Rem est fugit aut d",
+      "price": 41,
+      "stock": 61,
+      "category_id": "Perlengkapan Rumah",
+      "id": "1b05ec2a-59ab-4925-a93f-76b87618cbf5",
+      "seller_id": "1b05ec2a-59ab-4925-a93f-76b87618cbf5",
+      "created_on": "2023-05-30T10:24:38.948Z"
+    },
+    {
+      "name": "Voluptatem Officia ",
+      "image": "Eaque in nisi nisi s",
+      "description": "Porro officia accusa",
+      "price": 28,
+      "stock": 36,
+      "category_id": "Perlengkapan Rumah",
+      "id": "911cb161-0cb7-4a74-8b42-d305529bda3e",
+      "seller_id": "911cb161-0cb7-4a74-8b42-d305529bda3e",
+      "created_on": "2023-05-30T10:32:04.323Z"
+    },
+    {
+      "name": "Aliquam dicta quis r",
+      "image": "Ut amet impedit ne",
+      "description": "Error dolorem tempor",
+      "price": 34,
+      "stock": 91,
+      "category_id": "Kesehatan",
+      "id": "82aeabb7-f286-4652-9c43-c040a77dcb7d",
+      "seller_id": "82aeabb7-f286-4652-9c43-c040a77dcb7d",
+      "created_on": "2023-05-30T10:33:36.765Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
