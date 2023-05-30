@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Name</label>
+    <input type="text" formControlName="name" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Image URL</label>
+    <input type="text" formControlName="image" class="form-control">
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">Description</span>
+    <textarea class="form-control" formControlName="description" aria-label="With textarea"></textarea>
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="exampleFormControlInput1" class="form-label">Price</label>
+    <input type="number" formControlName="price" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Stock</label>
+    <input type="number" formControlName="stock" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Category</label>
+    <select class="form-select" formControlName="category_id" aria-label="Default select example">
+      <option selected disabled>--PLEASE SELECT ONE--</option>
+      <option ngValue="Perlengkapan Rumah">Perlengkapan Rumah</option>
+      <option ngValue="Elektronik">Elektronik</option>
+      <option ngValue="Kesehatan">Kesehatan</option>
+    </select>
+  </div>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+    <button class="btn btn-danger me-md-2" type="button" routerLink="/seller/manage-product">Cancel</button>
+    <button class="btn btn-primary" type="submit">Add</button>
+  </div>
+</form>

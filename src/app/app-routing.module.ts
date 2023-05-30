@@ -10,15 +10,33 @@ import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page
 import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
+import { SManageProductPageComponent } from './pages/seller/s-manage-product-page/s-manage-product-page.component';
+import { SProfilePageComponent } from './pages/seller/s-profile-page/s-profile-page.component';
+import { SChangePasswordPageComponent } from './pages/seller/s-change-password-page/s-change-password-page.component';
+import { SSimpleReportPageComponent } from './pages/seller/s-simple-report-page/s-simple-report-page.component';
+import { SAddProductPageComponent } from './pages/seller/s-add-product-page/s-add-product-page.component';
+import { SEditProductPageComponent } from './pages/seller/s-edit-product-page/s-edit-product-page.component';
+import { SOrderPageComponent } from './pages/seller/s-order-page/s-order-page.component';
+import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-order-detail-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 const routes: Routes = [  
+  {
+    path: 'login',
+    component: LoginPageComponent,
+    data: {},
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent,
+    data: {},
+  },
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
-    data: {
-      // title: 'Home - audiBCA',
-    },
+    data: { },
   }, {
     path: 'home',
     component: BHomePageComponent,
@@ -50,6 +68,41 @@ const routes: Routes = [
   }, {
     path: 'seller/dashboard',
     component: SDashboardPageComponent,
+    data: {},
+  },{
+    path: 'seller/manage-product',
+    component: SManageProductPageComponent,
+    data: {},
+  },{
+    path: 'seller/profile',
+    component: SProfilePageComponent,
+    data: {},
+  },{
+    path: 'seller/change-password',
+    component: SChangePasswordPageComponent,
+    data: {},
+  },{
+    path: 'seller/simple-report',
+    component: SSimpleReportPageComponent,
+    data: {},
+  },{
+    path: 'seller/add-product',
+    component: SAddProductPageComponent,
+    data: {},
+  },
+  {
+    path: 'seller/edit-product/:id',
+    component: SEditProductPageComponent,
+    data: {},
+  },
+  {
+    path: 'seller/manage-order',
+    component: SOrderPageComponent,
+    data: {},
+  },
+  {
+    path: 'seller/detail-order/:id',
+    component: SOrderDetailPageComponent,
     data: {},
   },
 
