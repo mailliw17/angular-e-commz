@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/services/buyer/cart.service';
 
@@ -25,7 +26,7 @@ export class BCheckoutPageComponent implements OnInit {
   subtotal = 0;
   shipping = 0;
 
-  constructor(private cartService: CartService) { }
+  constructor(private router: Router, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.onFetchCart();
@@ -41,6 +42,22 @@ export class BCheckoutPageComponent implements OnInit {
     if (this.checkoutForm.invalid) {
       return;
     }
-    console.log(this.checkoutForm.value);
+    
+    // todo: send to order service
+
+    this.cartService.clearCart();
+    
+    this.router.navigate(['/payment'], {
+      queryParams: {
+        order_id: 'id',
+        method: this.checkoutForm.value.payment,
+        total: this.subtotal + this.shipping
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.submitted = false;
+    this.checkoutForm.reset();
   }
 }

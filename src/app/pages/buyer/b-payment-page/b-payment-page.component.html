@@ -1,13 +1,13 @@
 <section class="mb-5">
   <p class="h3 pb-3">Payment</p>
   <div class="p-5 text-center">
-    <p *ngIf="payment_method == 'va_bca'" class="bg-light rounded" style="font-size: 80px;">03415234</p>
-    <i *ngIf="payment_method == 'qris'" class="bi bi-qr-code" style="font-size: 96px;"></i>
+    <p *ngIf="paymentMethod == 'va_bca'" class="bg-light rounded" style="font-size: 80px;">03415234</p>
+    <i *ngIf="paymentMethod == 'qris'" class="bi bi-qr-code" style="font-size: 96px;"></i>
     <h1 class="text-body-emphasis">Pay to complete payment!</h1>
     <h4 class="col-lg-6 mx-auto mb-4">
       Total: {{ total | currency }}
     </h4>
-    <button routerLink="/" class="btn btn-primary px-5 mb-5" type="button">
+    <button type="button" (click)="payOrder()" class="btn btn-primary px-5 mb-5">
       Back to home
     </button>
   </div>
