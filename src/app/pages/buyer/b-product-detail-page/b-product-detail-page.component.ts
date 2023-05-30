@@ -33,6 +33,6 @@ export class BProductDetailPageComponent implements OnInit {
       product: this.product,
       qty: this.qty
     }
-    this.cartService.add(payload);
+    this.cartService.addItem(payload);
   }
 }

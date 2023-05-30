@@ -12,6 +12,19 @@
       "created_on": "2023-05-30T14:52:42.466Z"
     }
   ],
+  "orders": [
+    {
+      "id": "9bdade1e-9b7b-4f6c-bf8e-e3bf59ebd49b",
+      "user_id": "user1",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 7299,
+      "status": "PAID",
+      "total_price": 3010000,
+      "payment_method": "qris",
+      "created_on": "2023-05-30T17:04:46.901Z"
+    }
+  ],
   "comments": [
     {
       "id": 1,

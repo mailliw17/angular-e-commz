@@ -23,8 +23,12 @@ export class BCartPageComponent implements OnInit {
     [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
   }
 
+  onUpdateCart() {
+    this.subtotal = this.cartService.updateSubtotal();
+  }
+
   onDeleteCart(id: string) {
-    this.cartService.delete(id);
+    this.cartService.removeItem(id);
     this.onFetchCart();
   }
 }
