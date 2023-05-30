@@ -1,0 +1,58 @@
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <!-- <button class="btn btn-primary" type="button" routerLink="/seller/add-product"><i class="bi bi-plus"></i>Add
+    New</button> -->
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Product</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>
+        <ul>
+          <li>Dahlia Teh Keraton</li>
+          <li>Bakso</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>x5</li>
+          <li>x3</li>
+        </ul>
+      </td>
+      <td>{{ '60000' | currency }}</td>
+      <td><span class="badge text-bg-primary">PAID</span></td>
+      <td>
+        <button class="btn btn-info m-2" routerLink="/seller/detail-order/1"><i class="bi bi-search"></i></button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>
+        <ul>
+          <li>Dahlia Teh Keraton</li>
+          <li>Bakso</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>x5</li>
+          <li>x3</li>
+        </ul>
+      </td>
+      <td>{{ '60000' | currency }}</td>
+      <td><span class="badge text-bg-success">DELIVERY</span></td>
+      <td>
+        <button class="btn btn-info m-2" routerLink="/seller/detail-order/1"><i class="bi bi-search"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
