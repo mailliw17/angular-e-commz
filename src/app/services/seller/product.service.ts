@@ -16,35 +16,14 @@ export class ProductService {
 
   postProduct(data : any) {
     return this.http.post<any>(BASE_URL, data)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
   } 
 
   getProducts() {
     return this.http.get<any>(BASE_URL)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
   }
 
   getProductById(id: String) {
     return this.http.get<any>(BASE_URL +'/' + id)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
   }
 
   deleteProduct(id: String) {

@@ -1,6 +1,7 @@
 <form [formGroup]="editForm" (ngSubmit)="onUpdate()">
   <input type="text" formControlName="id" class="form-control" [hidden]="true">
   <input type="text" formControlName="seller_id" class="form-control" [hidden]="true">
+  <input type="text" formControlName="seller_name" class="form-control" [hidden]="true">
   <input type="text" formControlName="created_on" class="form-control" [hidden]="true">
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Name</label>
