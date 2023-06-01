@@ -1,6 +1,7 @@
 export interface Product {
   id: string
   seller_id: string
+  seller_name:string
   name: string
   image: string
   description: string

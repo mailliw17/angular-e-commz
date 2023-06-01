@@ -12,7 +12,6 @@ import * as uuid from 'uuid';
   styleUrls: ['./s-add-product-page.component.scss']
 })
 export class SAddProductPageComponent implements OnInit {
-  formValue !:FormGroup
   productModelObj : Product
   uuid = uuid.v4()
 
@@ -29,7 +28,8 @@ export class SAddProductPageComponent implements OnInit {
     stock : new FormControl('', Validators.required),
     category_id : new FormControl('', Validators.required),
     id : new FormControl(this.uuid, Validators.required),
-    seller_id : new FormControl(this.uuid, Validators.required),
+    seller_id : new FormControl('123', Validators.required),
+    seller_name : new FormControl('maman', Validators.required),
     created_on : new FormControl(new Date(), Validators.required)
   })
 

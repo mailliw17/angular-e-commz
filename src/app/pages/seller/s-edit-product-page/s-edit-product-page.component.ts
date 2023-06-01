@@ -29,6 +29,7 @@ export class SEditProductPageComponent implements OnInit {
     category_id : new FormControl('', Validators.required),
     id : new FormControl('', Validators.required),
     seller_id : new FormControl('', Validators.required),
+    seller_name : new FormControl('', Validators.required),
     created_on : new FormControl('', Validators.required)
   })
 
@@ -64,6 +65,7 @@ export class SEditProductPageComponent implements OnInit {
             category_id : new FormControl(res['category_id'], Validators.required),
             id : new FormControl(res['id'], Validators.required),
             seller_id : new FormControl(res['seller_id'], Validators.required),
+            seller_name : new FormControl(res['seller_name'], Validators.required),
             created_on : new FormControl(res['created_on'], Validators.required)
           })
         },

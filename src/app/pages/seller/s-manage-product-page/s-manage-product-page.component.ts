@@ -24,7 +24,7 @@ export class SManageProductPageComponent implements OnInit {
     .subscribe(
       res => {
         this.products = res
-        console.log(this.products);
+        // console.log(this.products);
       },
       err => {
         console.log(err);
