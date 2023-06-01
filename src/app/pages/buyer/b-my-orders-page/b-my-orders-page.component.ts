@@ -18,6 +18,10 @@ export class BMyOrdersPageComponent implements OnInit {
   }
 
   onFetchProducts() {
-    this.products = this.productService.fetch();
+    this.productService.getProducts()
+    .subscribe(
+      res => { this.products = res },
+      err => { console.log(err) }
+    )
   }
 }

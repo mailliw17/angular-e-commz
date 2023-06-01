@@ -54,7 +54,9 @@ export class CartService {
         qty: qty, //required to db
         name: product.name,
         image: product.image,
-        stock: product.stock
+        stock: product.stock,
+        seller_id: product.seller_id,
+        seller_name: product.seller_name
       }
       this.cart.push(payload);
       this.cartIds.push(product.id);

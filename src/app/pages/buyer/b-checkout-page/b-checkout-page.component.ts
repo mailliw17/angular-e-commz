@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/buyer/cart.service';
 import { OrderService } from 'src/app/services/buyer/order.service';
 import * as uuid from 'uuid';
@@ -28,7 +30,12 @@ export class BCheckoutPageComponent implements OnInit {
     {name: 'QRIS', value: 'qris'}
   ];
 
-  constructor(private router: Router, private cartService: CartService, private orderService: OrderService) { }
+  constructor(
+    private router: Router,
+    private toast: ToastrService,
+    private cartService: CartService,
+    private orderService: OrderService
+  ) { }
 
   ngOnInit(): void {
     this.onFetchCart();
@@ -44,8 +51,19 @@ export class BCheckoutPageComponent implements OnInit {
     if (this.checkoutForm.invalid) {
       return;
     }
+
+    let orderDetailPayload = this.cart.map(item => {
+      return {
+        product_image: item.image,
+        product_name: item.name,
+        product_qty: item.qty,
+        product_price: item.price,
+        product_seller: item.seller_id,
+        product_seller_name: item.seller_name
+      }
+    })
     
-    let order_payload = {
+    let orderPayload = {
       id: this.order_uuid,
       user_id: 'user1',
       dest_address: this.checkoutForm.value.address,
@@ -54,16 +72,15 @@ export class BCheckoutPageComponent implements OnInit {
       status: 'PENDING',
       total_price: this.subtotal + this.shipping,
       payment_method: this.checkoutForm.value.payment,
-      created_on: new Date()
-    }    
+      created_on: new Date(),
+      order_detail: orderDetailPayload
+    }
 
-    this.orderService.postOrder(order_payload)
+    this.orderService.postOrder(orderPayload)
       .subscribe(
-        res => { alert('Order Added') },
+        res => { this.toast.success('Checkout Successful', 'Success') },
         err => { console.log(err) }
       )
-
-    // post order details
 
     this.cartService.clearCart();
     this.router.navigate(['/payment'], {

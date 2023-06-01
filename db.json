@@ -1,11 +1,11 @@
 {
   "products": [
     {
-      "name": "Vero corporis verita",
-      "image": "Dolore quo quia ipsu",
-      "description": "Eaque eos ullamco u",
-      "price": 62,
-      "stock": 61,
+      "name": "PÄRUP Sofa",
+      "image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+      "description": "3 seater sofa, vissle grey.",
+      "price": 5395000,
+      "stock": 2,
       "category_id": "Perlengkapan Rumah",
       "id": "d8922cd4-88d0-4d50-a66f-edc481c07284",
       "seller_id": "123",
@@ -13,12 +13,12 @@
       "created_on": "2023-06-01T03:41:26.054Z"
     },
     {
-      "name": "Et voluptatum et asp",
-      "image": "Non doloremque exped",
-      "description": "Quibusdam autem veli",
-      "price": 84,
-      "stock": 46,
-      "category_id": "Elektronik",
+      "name": "Nike Foamposite One",
+      "image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+      "description": "Abalone colorway.",
+      "price": 3450000,
+      "stock": 3,
+      "category_id": "Perlengkapan Rumah",
       "id": "beeff1a6-517c-40ed-b38a-9a918aae590c",
       "seller_id": "123",
       "seller_name": "maman",
@@ -81,6 +81,35 @@
           "product_qty": 3,
           "product_price": 13000,
           "product_seller": "32fa69b4-334a-4e40-8d84-49fb8e4c219b"
+        }
+      ]
+    },
+    {
+      "id": "dde942a9-b5a1-402a-9e5c-0631ecee4cfb",
+      "user_id": "user1",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 4284,
+      "status": "PAID",
+      "total_price": 12305000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-01T13:34:16.698Z",
+      "order_detail": [
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 2,
+          "product_price": 3450000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+          "product_name": "PÄRUP Sofa",
+          "product_qty": 1,
+          "product_price": 5395000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
         }
       ]
     }
