@@ -48,9 +48,6 @@ export class BPaymentPageComponent implements OnInit {
       },
       err => { console.log(err) }
     )
-
-    
-
     this.router.navigate(['']);
   }
 }

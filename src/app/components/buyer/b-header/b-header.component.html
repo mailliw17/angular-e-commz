@@ -9,7 +9,7 @@
       </div>
 
       <form class="col-auto flex-grow-1 mx-3">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" routerLink="/catalog">
+        <input type="search" class="form-control" placeholder="Search by name..." (input)="onSearch($event.target.value)" aria-label="Search">
       </form>
 
       <div class="col-lg-1"></div>

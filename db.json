@@ -1,16 +1,28 @@
 {
   "products": [
     {
-      "name": "PÄRUP Sofa",
+      "name": "PARUP Sofa",
       "image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
       "description": "3 seater sofa, vissle grey.",
       "price": 5395000,
       "stock": 2,
-      "category_id": "Perlengkapan Rumah",
+      "category_id": "furniture",
       "id": "d8922cd4-88d0-4d50-a66f-edc481c07284",
       "seller_id": "123",
       "seller_name": "maman",
       "created_on": "2023-06-01T03:41:26.054Z"
+    },
+    {
+      "name": "Blackmores Vitamin C 500mg",
+      "image": "https://www.blackmores.com.my/-/media/project/blackmores/malaysia/images/products03/bm-2021_vitamin-c-500mg-60tabs.png?h=1438&iar=0&w=1092&hash=95F3CF6ADF4F979EE40AF49502807120",
+      "description": "60 tabs of 500mg vit c",
+      "price": 117750,
+      "stock": 10,
+      "category_id": "health_products",
+      "id": "zxesd1a6-127c-40ew-b38a-9a918as3290c",
+      "seller_id": "123",
+      "seller_name": "maman",
+      "created_on": "2023-06-01T03:41:43.726Z"
     },
     {
       "name": "Nike Foamposite One",
@@ -18,8 +30,20 @@
       "description": "Abalone colorway.",
       "price": 3450000,
       "stock": 3,
-      "category_id": "Perlengkapan Rumah",
+      "category_id": "clothing",
       "id": "beeff1a6-517c-40ed-b38a-9a918aae590c",
+      "seller_id": "123",
+      "seller_name": "maman",
+      "created_on": "2023-06-01T03:41:43.726Z"
+    },
+    {
+      "name": "Adidas Ultra Boost 20",
+      "image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
+      "description": "Dash Grey Blue Violet colorway.",
+      "price": 2338000,
+      "stock": 5,
+      "category_id": "clothing",
+      "id": "fd2312fd-517c-80dd-b55a-dsgvnaa3420c",
       "seller_id": "123",
       "seller_name": "maman",
       "created_on": "2023-06-01T03:41:43.726Z"
