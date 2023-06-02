@@ -9,7 +9,7 @@
       </div>
 
       <form class="col-auto flex-grow-1 mx-3">
-        <input type="search" class="form-control" placeholder="Search by name..." (input)="onSearch($event.target.value)" aria-label="Search">
+        <input type="search" class="form-control" placeholder="Search catalog by product name..." (input)="onSearch($event.target.value)" aria-label="Search">
       </form>
 
       <div class="col-lg-1"></div>
@@ -17,9 +17,6 @@
       <div class="col-auto">
         <button routerLink="/cart" type="button" class="btn btn-link link-dark position-relative">
           <i class="bi bi-cart3" style="font-size: 20px;"></i>
-          <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="top: 30%; left: 90%">
-            1
-          </span>
         </button>
         <div class="btn-group" role="group">
           <button type="button" class="btn btn-link link-dark dropdown-toggle" data-bs-toggle="dropdown"

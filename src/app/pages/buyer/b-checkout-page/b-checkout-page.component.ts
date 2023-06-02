@@ -43,7 +43,7 @@ export class BCheckoutPageComponent implements OnInit {
 
   onFetchCart() {
     this.shipping = this.cartService.fetchShipping();
-    [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
+    [this.cart, this.subtotal] = this.cartService.fetchCart();
   }
 
   onSubmit() {

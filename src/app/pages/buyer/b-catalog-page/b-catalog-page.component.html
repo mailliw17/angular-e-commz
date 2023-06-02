@@ -38,19 +38,9 @@
             Sort By
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <a class="{{activeSort == 'none' ? 'active' : ''}} dropdown-item" (click)="onSort('none')">
-                None
-              </a>
-            </li>
-            <li>
-              <a class="{{activeSort == 'price_asc' ? 'active' : ''}} dropdown-item" (click)="onSort('price_asc')">
-                Price <i class="bi bi-arrow-up"></i>
-              </a>
-            </li>
-            <li>
-              <a class="{{activeSort == 'price_desc' ? 'active' : ''}} dropdown-item" (click)="onSort('price_desc')">
-                Price <i class="bi bi-arrow-down"></i>
+            <li *ngFor="let sort of sorts">
+              <a class="{{activeSort == sort.value ? 'active' : ''}} dropdown-item" (click)="onSort(sort.value)">
+                {{ sort.name }} <i class="bi {{sort?.icon}}"></i>
               </a>
             </li>
           </ul>

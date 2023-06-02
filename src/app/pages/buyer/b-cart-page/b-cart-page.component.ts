@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/buyer/cart.service';
 
 @Component({
@@ -12,7 +14,10 @@ export class BCartPageComponent implements OnInit {
   subtotal = 0;
   shipping = 0;
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    private toast: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.onFetchCart();
@@ -20,7 +25,7 @@ export class BCartPageComponent implements OnInit {
 
   onFetchCart() {
     this.shipping = this.cartService.fetchShipping();
-    [this.cart, this.subtotal] = this.cartService.fetchCart(); //+subscribe
+    [this.cart, this.subtotal] = this.cartService.fetchCart();
   }
 
   onUpdateCart() {
@@ -29,6 +34,7 @@ export class BCartPageComponent implements OnInit {
 
   onDeleteCart(id: string) {
     this.cartService.removeItem(id);
+    this.toast.warning('Product removed to cart', 'Warning');
     this.onFetchCart();
   }
 }

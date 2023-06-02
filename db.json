@@ -110,7 +110,8 @@
     },
     {
       "id": "dde942a9-b5a1-402a-9e5c-0631ecee4cfb",
-      "user_id": "user1",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
       "dest_address": "123 Main St",
       "shipping_price": 10000,
       "waybill_number": 4284,
@@ -132,6 +133,36 @@
           "product_name": "PÄRUP Sofa",
           "product_qty": 1,
           "product_price": 5395000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "dd3ef8f3-ed2e-4439-8425-ddd5a36e8182",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 7474,
+      "status": "PAID",
+      "total_price": 5522750,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-02T14:22:04.216Z",
+      "order_detail": [
+        {
+          "product_image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+          "product_name": "PARUP Sofa",
+          "product_qty": 1,
+          "product_price": 5395000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://www.blackmores.com.my/-/media/project/blackmores/malaysia/images/products03/bm-2021_vitamin-c-500mg-60tabs.png?h=1438&iar=0&w=1092&hash=95F3CF6ADF4F979EE40AF49502807120",
+          "product_name": "Blackmores Vitamin C 500mg",
+          "product_qty": 1,
+          "product_price": 117750,
           "product_seller": "123",
           "product_seller_name": "maman"
         }

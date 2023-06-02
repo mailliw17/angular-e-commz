@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { ProductService } from 'src/app/services/buyer/product.service';
 import { Product } from 'src/app/models/product.model';
-import { FormGroup, FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-b-catalog-page',
@@ -18,6 +18,11 @@ export class BCatalogPageComponent implements OnInit {
     { name: 'Health Products', value: 'health_products' },
     { name: 'Household Items', value: 'household_items' },
   ];
+  sorts = [
+    { name: 'None', value: 'none' },
+    { name: 'Price', value: 'price_asc', icon: 'bi-arrow-up' },
+    { name: 'Price', value: 'price_desc', icon: 'bi-arrow-down' },
+  ];
 
   products: Product[];
   filteredProducts: Product[];
@@ -28,7 +33,7 @@ export class BCatalogPageComponent implements OnInit {
 
   pages: number[] = [0];
   activePage: number = 1;
-  itemsPerPage: number = 4;
+  itemsPerPage: number = 2;
 
   filterForm = new FormGroup({
     filters: new FormArray([])
