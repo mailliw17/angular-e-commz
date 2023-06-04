@@ -33,7 +33,7 @@ export class BCatalogPageComponent implements OnInit {
 
   pages: number[] = [0];
   activePage: number = 1;
-  itemsPerPage: number = 2;
+  itemsPerPage: number = 8;
 
   filterForm = new FormGroup({
     filters: new FormArray([])

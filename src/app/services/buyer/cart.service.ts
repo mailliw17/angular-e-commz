@@ -49,14 +49,17 @@ export class CartService {
       this.cart[index].qty = newQty > product.stock ? product.stock : newQty;
     } else {
       let payload = {
-        id: product.id, //required to db
-        price: product.price, //required to db
-        qty: qty, //required to db
         name: product.name,
         image: product.image,
+        description: product.description,
+        price: product.price,
         stock: product.stock,
+        category_id: product.category_id,
+        id: product.id,
         seller_id: product.seller_id,
-        seller_name: product.seller_name
+        seller_name: product.seller_name,
+        created_on: product.created_on,
+        qty: qty, //required in order.json
       }
       this.cart.push(payload);
       this.cartIds.push(product.id);

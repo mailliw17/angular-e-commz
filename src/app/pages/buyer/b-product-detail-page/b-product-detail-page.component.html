@@ -28,9 +28,8 @@
       <div class="col-lg-4">
         <div class="mx-3 my-5 bg-light card-body rounded shadow-sm">
           <div class="d-flex align-items-center">
-            <input type="number" class="form-control" name="qty" [(ngModel)]="qty" min="1" [max]="product?.stock"
-              style="width: 80px;">
-            <div class="ms-3">Stock: {{ product?.stock }}</div>
+            <input type="number" class="form-control me-3" name="qty" [(ngModel)]="qty" min="1" [max]="product?.stock" *ngIf="product?.stock" style="width: 80px;">
+            <div>Stock: {{ product?.stock }}</div>
           </div>
           <hr>
 
@@ -41,7 +40,9 @@
           <hr>
 
           <div class="d-grid gap-2">
-            <button (click)="onAddToCart()" type="button" class="btn btn-secondary">Add to Cart</button>
+            <button (click)="onAddToCart()" type="button" class="btn {{product?.stock ? 'btn-success' : 'btn-secondary'}}" [disabled]="!product?.stock">
+              {{product?.stock > 0 ? 'Add to Cart' : 'Out of Stock'}}
+            </button>
           </div>
         </div>
       </div>

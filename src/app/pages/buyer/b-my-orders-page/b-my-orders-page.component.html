@@ -27,8 +27,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <span>
           {{ filteredOrders?.length ? filteredOrders.length : 0 }}
-          order(s) 
-          {{ search ? 'for "'+search+'"' : ''}}
+          order(s)
           {{ activeFilter?.length ? 'with filters' : ''}}
         </span>
 
@@ -57,14 +56,14 @@
             <img [src]="order.order_detail[0].product_image" class="bd-placeholder-img rounded" width="100" height="100" alt="product_image">
       
             <div class="card-body py-1">
-              <span class="badge text-bg-primary">{{ order.status }}</span>
+              <span class="badge text-bg-success">{{ order.status }}</span>
               <h5 class="card-title fw-normal mb-0">{{ order.order_detail[0].product_name }}</h5>
               <small class="pb-2">{{ order.order_detail[0].product_price | currency }} x 2</small>
               <br>
               <small class="fw-light">+{{order.order_detail.length-1}} other</small>
             </div>
 
-            <a routerLink="" class="btn btn-link stretched-link"></a>
+            <a routerLink="/my-order-detail/{{order.id}}" class="btn btn-link stretched-link"></a>
             
             <div class="card-body text-end">
               <small>Total</small>

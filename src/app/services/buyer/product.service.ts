@@ -20,4 +20,8 @@ export class ProductService {
   getProductById(id: string) {
     return this.http.get<any>(BASE_URL +'/' + id)
   }
+
+  updateProduct(id:String, data:any) {
+    return this.http.put(BASE_URL +'/' + id, data)
+  }
 }

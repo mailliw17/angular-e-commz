@@ -8,6 +8,7 @@ import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout
 import { BPaymentPageComponent } from './pages/buyer/b-payment-page/b-payment-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
 import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
+import { MyOrderDetailPageComponent } from './pages/buyer/my-order-detail-page/my-order-detail-page.component';
 
 import { SDashboardPageComponent } from './pages/seller/s-dashboard-page/s-dashboard-page.component';
 import { SManageProductPageComponent } from './pages/seller/s-manage-product-page/s-manage-product-page.component';
@@ -48,6 +49,10 @@ const routes: Routes = [
   }, {
     path: 'my-orders',
     component: BMyOrdersPageComponent,
+    data: {},
+  }, {
+    path: 'my-order-detail/:id',
+    component: MyOrderDetailPageComponent,
     data: {},
   }, {
     path: 'product-detail/:id',

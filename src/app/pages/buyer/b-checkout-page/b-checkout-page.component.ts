@@ -3,6 +3,7 @@ import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ToastrService } from 'ngx-toastr';
+import { ProductService } from 'src/app/services/buyer/product.service';
 import { CartService } from 'src/app/services/buyer/cart.service';
 import { OrderService } from 'src/app/services/buyer/order.service';
 import * as uuid from 'uuid';
@@ -33,6 +34,7 @@ export class BCheckoutPageComponent implements OnInit {
   constructor(
     private router: Router,
     private toast: ToastrService,
+    private productService: ProductService,
     private cartService: CartService,
     private orderService: OrderService
   ) { }
@@ -65,7 +67,8 @@ export class BCheckoutPageComponent implements OnInit {
     
     let orderPayload = {
       id: this.order_uuid,
-      user_id: 'user1',
+      user_id: "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      user_name: "Buyer asli",
       dest_address: this.checkoutForm.value.address,
       shipping_price: this.shipping,
       waybill_number: Math.round(Math.random() * 10000),
@@ -75,6 +78,15 @@ export class BCheckoutPageComponent implements OnInit {
       created_on: new Date(),
       order_detail: orderDetailPayload
     }
+
+    this.cart.forEach(product => {
+      product.stock = product.stock - product.qty;
+      delete product.qty;
+
+      this.productService.updateProduct(product.id, product).subscribe(
+        err => { console.log(err) }
+      );
+    })
 
     this.orderService.postOrder(orderPayload)
       .subscribe(

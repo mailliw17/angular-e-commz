@@ -20,6 +20,7 @@ import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout
 import { BPaymentPageComponent } from './pages/buyer/b-payment-page/b-payment-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
 import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
+import { MyOrderDetailPageComponent } from './pages/buyer/my-order-detail-page/my-order-detail-page.component';
 
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 import { SHeaderComponent } from './components/seller/s-header/s-header.component';
@@ -81,6 +82,8 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     LoginPageComponent,
 
     RegisterPageComponent,
+
+    MyOrderDetailPageComponent,
   ],
   imports: [
     BrowserModule,

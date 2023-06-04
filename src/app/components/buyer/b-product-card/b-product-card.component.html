@@ -15,8 +15,9 @@
           <i class="bi bi-star-fill"></i> 5.0
         </span> | Sold 10
       </small>
-      <a routerLink="/product-detail/{{item.id}}" class="btn btn-link stretched-link"></a>
+      <span class="text-danger fw-medium" *ngIf="!item?.stock">Out of stock</span>
     </div>
+    <a routerLink="/product-detail/{{item.id}}" class="btn btn-link stretched-link"></a>
   </div>
 </ng-template>
 

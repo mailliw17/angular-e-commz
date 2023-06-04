@@ -29,7 +29,7 @@
       "image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
       "description": "Abalone colorway.",
       "price": 3450000,
-      "stock": 3,
+      "stock": 0,
       "category_id": "clothing",
       "id": "beeff1a6-517c-40ed-b38a-9a918aae590c",
       "seller_id": "123",
@@ -41,7 +41,7 @@
       "image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
       "description": "Dash Grey Blue Violet colorway.",
       "price": 2338000,
-      "stock": 5,
+      "stock": 3,
       "category_id": "clothing",
       "id": "fd2312fd-517c-80dd-b55a-dsgvnaa3420c",
       "seller_id": "123",
@@ -163,6 +163,58 @@
           "product_name": "Blackmores Vitamin C 500mg",
           "product_qty": 1,
           "product_price": 117750,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "e89afff8-0552-4199-a5e0-a7664eb3b280",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 2202,
+      "status": "PAID",
+      "total_price": 11586000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-04T10:03:01.958Z",
+      "order_detail": [
+        {
+          "product_image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
+          "product_name": "Adidas Ultra Boost 20",
+          "product_qty": 2,
+          "product_price": 2338000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 2,
+          "product_price": 3450000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "bf22cd66-ccc2-40aa-99d4-672541349bf5",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 281,
+      "status": "PAID",
+      "total_price": 3460000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-04T10:03:34.718Z",
+      "order_detail": [
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 1,
+          "product_price": 3450000,
           "product_seller": "123",
           "product_seller_name": "maman"
         }
