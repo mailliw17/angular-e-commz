@@ -12,26 +12,16 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  postOrder(data : any) {
-    return this.http.post<any>(BASE_URL, data)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
+  getOrder(params = undefined) {
+    return this.http.get<any>(BASE_URL, {params: params});
   }
 
   getOrderById(id: String) {
     return this.http.get<any>(BASE_URL +'/' + id)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
+  }
+
+  postOrder(data : any) {
+    return this.http.post<any>(BASE_URL, data)
   }
 
   updateOrder(id:String, data:any) {

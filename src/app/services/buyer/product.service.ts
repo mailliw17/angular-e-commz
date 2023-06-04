@@ -1,40 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+const BASE_URL =
+'http://localhost:3000/products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  products = [
-    { 
-      id: 'p1', seller_id: 's1', name: 'Denim Sofa', image: 'image_sofa.jpg',
-      description: 'Lorem ipsum dolor sit amet', 
-      price: 5000000, stock: 2, category_id: 'c1', created_on: new Date(),
-    },
-    { 
-      id: 'p2', seller_id: 's2', name: 'Large Canvas', image: 'image_canvas.jpg',
-      description: 'consectetur adipiscing elit', 
-      price: 20000, stock: 100, category_id: 'c2', created_on: new Date(),
-    },
-    { 
-      id: 'p3', seller_id: 's3', name: 'Nike Shoes', image: 'image_shoes.jpg',
-      description: 'sed do eiusmod tempor incididunt', 
-      price: 3000000, stock: 5, category_id: 'c3', created_on: new Date(),
-    },
-    { 
-      id: 'p4', seller_id: 's4', name: 'Adidas Shoes', image: 'image_shoes_2.jpg',
-      description: 'aliquip ex ea commodo consequat', 
-      price: 2000000, stock: 6, category_id: 'c4', created_on: new Date(),
-    },
-  ];
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor() { }
-
-  fetch() {
-    return this.products;
+  getProducts(params = undefined) {
+    return this.http.get<any>(BASE_URL, {params: params});
   }
 
-  fetchById(id: string) {
-    return this.products.filter(product => product.id === id)[0];
+  getProductById(id: string) {
+    return this.http.get<any>(BASE_URL +'/' + id)
+  }
+
+  updateProduct(id:String, data:any) {
+    return this.http.put(BASE_URL +'/' + id, data)
   }
 }

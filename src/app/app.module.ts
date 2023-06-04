@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +20,7 @@ import { BCheckoutPageComponent } from './pages/buyer/b-checkout-page/b-checkout
 import { BPaymentPageComponent } from './pages/buyer/b-payment-page/b-payment-page.component';
 import { BProductDetailPageComponent } from './pages/buyer/b-product-detail-page/b-product-detail-page.component';
 import { BMyOrdersPageComponent } from './pages/buyer/b-my-orders-page/b-my-orders-page.component';
+import { MyOrderDetailPageComponent } from './pages/buyer/my-order-detail-page/my-order-detail-page.component';
 
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 import { SHeaderComponent } from './components/seller/s-header/s-header.component';
@@ -33,7 +38,6 @@ import { SOrderPageComponent } from './pages/seller/s-order-page/s-order-page.co
 import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-order-detail-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -78,13 +82,22 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPageComponent,
 
     RegisterPageComponent,
+
+    MyOrderDetailPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-b-header',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onSearch(input: string) {
+    if (!input) return this.router.navigate(['/catalog']);
+    return this.router.navigate(['/catalog'], {
+      queryParams: {
+        search: input,
+      }
+    });
+  }
 }

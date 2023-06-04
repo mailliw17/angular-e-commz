@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Product } from 'src/app/models/product.model';
 
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/buyer/product.service';
 import { CartService } from 'src/app/services/buyer/cart.service';
 
@@ -17,7 +18,12 @@ export class BProductDetailPageComponent implements OnInit {
   product:Product;
   qty = 1;
   
-  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private toast: ToastrService,
+    private productService: ProductService, 
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params.id;
@@ -25,7 +31,11 @@ export class BProductDetailPageComponent implements OnInit {
   }
 
   onFetchProduct(id: string) {
-    this.product = this.productService.fetchById(id);
+    this.productService.getProductById(id)
+    .subscribe(
+      res => { this.product = res },
+      err => { console.log(err) }
+    )
   }
 
   onAddToCart() {
@@ -34,5 +44,6 @@ export class BProductDetailPageComponent implements OnInit {
       qty: this.qty
     }
     this.cartService.addItem(payload);
+    this.toast.success('Product added to cart', 'Success');
   }
 }

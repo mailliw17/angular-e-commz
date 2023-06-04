@@ -1,25 +1,49 @@
 {
   "products": [
     {
-      "name": "Vero corporis verita",
-      "image": "Dolore quo quia ipsu",
-      "description": "Eaque eos ullamco u",
-      "price": 62,
-      "stock": 61,
-      "category_id": "Perlengkapan Rumah",
+      "name": "PARUP Sofa",
+      "image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+      "description": "3 seater sofa, vissle grey.",
+      "price": 5395000,
+      "stock": 2,
+      "category_id": "furniture",
       "id": "d8922cd4-88d0-4d50-a66f-edc481c07284",
       "seller_id": "123",
       "seller_name": "maman",
       "created_on": "2023-06-01T03:41:26.054Z"
     },
     {
-      "name": "Et voluptatum et asp",
-      "image": "Non doloremque exped",
-      "description": "Quibusdam autem veli",
-      "price": 84,
-      "stock": 46,
-      "category_id": "Elektronik",
+      "name": "Blackmores Vitamin C 500mg",
+      "image": "https://www.blackmores.com.my/-/media/project/blackmores/malaysia/images/products03/bm-2021_vitamin-c-500mg-60tabs.png?h=1438&iar=0&w=1092&hash=95F3CF6ADF4F979EE40AF49502807120",
+      "description": "60 tabs of 500mg vit c",
+      "price": 117750,
+      "stock": 10,
+      "category_id": "health_products",
+      "id": "zxesd1a6-127c-40ew-b38a-9a918as3290c",
+      "seller_id": "123",
+      "seller_name": "maman",
+      "created_on": "2023-06-01T03:41:43.726Z"
+    },
+    {
+      "name": "Nike Foamposite One",
+      "image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+      "description": "Abalone colorway.",
+      "price": 3450000,
+      "stock": 0,
+      "category_id": "clothing",
       "id": "beeff1a6-517c-40ed-b38a-9a918aae590c",
+      "seller_id": "123",
+      "seller_name": "maman",
+      "created_on": "2023-06-01T03:41:43.726Z"
+    },
+    {
+      "name": "Adidas Ultra Boost 20",
+      "image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
+      "description": "Dash Grey Blue Violet colorway.",
+      "price": 2338000,
+      "stock": 3,
+      "category_id": "clothing",
+      "id": "fd2312fd-517c-80dd-b55a-dsgvnaa3420c",
       "seller_id": "123",
       "seller_name": "maman",
       "created_on": "2023-06-01T03:41:43.726Z"
@@ -81,6 +105,118 @@
           "product_qty": 3,
           "product_price": 13000,
           "product_seller": "32fa69b4-334a-4e40-8d84-49fb8e4c219b"
+        }
+      ]
+    },
+    {
+      "id": "dde942a9-b5a1-402a-9e5c-0631ecee4cfb",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 4284,
+      "status": "PAID",
+      "total_price": 12305000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-01T13:34:16.698Z",
+      "order_detail": [
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 2,
+          "product_price": 3450000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+          "product_name": "PÄRUP Sofa",
+          "product_qty": 1,
+          "product_price": 5395000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "dd3ef8f3-ed2e-4439-8425-ddd5a36e8182",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 7474,
+      "status": "PAID",
+      "total_price": 5522750,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-02T14:22:04.216Z",
+      "order_detail": [
+        {
+          "product_image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
+          "product_name": "PARUP Sofa",
+          "product_qty": 1,
+          "product_price": 5395000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://www.blackmores.com.my/-/media/project/blackmores/malaysia/images/products03/bm-2021_vitamin-c-500mg-60tabs.png?h=1438&iar=0&w=1092&hash=95F3CF6ADF4F979EE40AF49502807120",
+          "product_name": "Blackmores Vitamin C 500mg",
+          "product_qty": 1,
+          "product_price": 117750,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "e89afff8-0552-4199-a5e0-a7664eb3b280",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 2202,
+      "status": "PAID",
+      "total_price": 11586000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-04T10:03:01.958Z",
+      "order_detail": [
+        {
+          "product_image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
+          "product_name": "Adidas Ultra Boost 20",
+          "product_qty": 2,
+          "product_price": 2338000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        },
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 2,
+          "product_price": 3450000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
+        }
+      ]
+    },
+    {
+      "id": "bf22cd66-ccc2-40aa-99d4-672541349bf5",
+      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
+      "user_name": "Buyer asli",
+      "dest_address": "123 Main St",
+      "shipping_price": 10000,
+      "waybill_number": 281,
+      "status": "PAID",
+      "total_price": 3460000,
+      "payment_method": "va_bca",
+      "created_on": "2023-06-04T10:03:34.718Z",
+      "order_detail": [
+        {
+          "product_image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
+          "product_name": "Nike Foamposite One",
+          "product_qty": 1,
+          "product_price": 3450000,
+          "product_seller": "123",
+          "product_seller_name": "maman"
         }
       ]
     }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
+
+import { ToastrService } from 'ngx-toastr';
 import { OrderService } from 'src/app/services/buyer/order.service';
-import { Order } from 'src/app/models/order.model';
 
 
 @Component({
@@ -16,7 +17,12 @@ export class BPaymentPageComponent implements OnInit {
   paymentMethod: string = '';
   total: number = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router, private orderService: OrderService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private toast: ToastrService,
+    private orderService: OrderService
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -36,15 +42,12 @@ export class BPaymentPageComponent implements OnInit {
           res.status = 'PAID';
           this.orderService.updateOrder(this.orderId, res)
           .subscribe(
-            res => { alert('Order Updated') },
+            res => { this.toast.success('Payment Successful', 'Success') },
             err => { console.log(err) }
           )
       },
       err => { console.log(err) }
     )
-
-    
-
     this.router.navigate(['']);
   }
 }
