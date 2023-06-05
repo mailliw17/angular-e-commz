@@ -21,6 +21,7 @@ import { SOrderPageComponent } from './pages/seller/s-order-page/s-order-page.co
 import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-order-detail-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 
 const routes: Routes = [  
   {
@@ -80,15 +81,7 @@ const routes: Routes = [
     path: 'seller/manage-product',
     component: SManageProductPageComponent,
     data: {},
-  }, {
-    path: 'seller/profile',
-    component: SProfilePageComponent,
-    data: {},
-  }, {
-    path: 'seller/change-password',
-    component: SChangePasswordPageComponent,
-    data: {},
-  }, {
+  },  {
     path: 'seller/simple-report',
     component: SSimpleReportPageComponent,
     data: {},
@@ -104,9 +97,22 @@ const routes: Routes = [
     path: 'seller/manage-order',
     component: SOrderPageComponent,
     data: {},
-  }, {
+  },{
+    path: 'seller/article',
+    component: SDummyContentComponent,
+    data: {},
+  }, 
+  {
     path: 'seller/detail-order/:id',
     component: SOrderDetailPageComponent,
+    data: {},
+  },{
+    path: 'seller/profile/:id',
+    component: SProfilePageComponent,
+    data: {},
+  }, {
+    path: 'seller/change-password/:id',
+    component: SChangePasswordPageComponent,
     data: {},
   },
 

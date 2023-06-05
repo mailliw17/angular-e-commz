@@ -84,6 +84,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     RegisterPageComponent,
 
     MyOrderDetailPageComponent,
+
   ],
   imports: [
     BrowserModule,

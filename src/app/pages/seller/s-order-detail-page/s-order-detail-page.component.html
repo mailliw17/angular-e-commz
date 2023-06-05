@@ -67,7 +67,7 @@
       <div class="d-flex gap-2 w-100 justify-content-between">
         <div>
           <h6 class="mb-0">Payment Method</h6>
-          <p class="mb-0 opacity-75">{{order.payment_method}}</p>
+          <p class="mb-0 opacity-75">{{(order.payment_method == 'va_bca' ? 'BCA Virtual Account' : 'QRIS')}}</p>
         </div>
         <!-- <small class="opacity-50 text-nowrap">now</small> -->
       </div>
