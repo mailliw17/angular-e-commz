@@ -45,13 +45,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         localStorage.setItem('token', token);
         
         if (res[0].role === 'Buyer')
-          this.router.navigate(['/']).then(() => {
-            window.location.reload();
-          });
+          this.router.navigate(['/'])
         if (res[0].role === 'Seller')
-          this.router.navigate(['/seller/dashboard']).then(() => {
-            window.location.reload();
-          });
+          this.router.navigate(['/seller/dashboard'])
           
         return this.toast.success('Logged In', 'Success');
       },

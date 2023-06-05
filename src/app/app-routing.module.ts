@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 import { BHomePageComponent } from './pages/buyer/b-home-page/b-home-page.component';
 import { BCartPageComponent } from './pages/buyer/b-cart-page/b-cart-page.component';
@@ -50,10 +51,12 @@ const routes: Routes = [
   }, {
     path: 'my-orders',
     component: BMyOrdersPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'my-order-detail/:id',
     component: MyOrderDetailPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'product-detail/:id',
@@ -62,57 +65,70 @@ const routes: Routes = [
   }, {
     path: 'cart',
     component: BCartPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'checkout',
     component: BCheckoutPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'payment',
     component: BPaymentPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   },
   
   {
     path: 'seller/dashboard',
     component: SDashboardPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'seller/manage-product',
     component: SManageProductPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   },  {
     path: 'seller/simple-report',
     component: SSimpleReportPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'seller/add-product',
     component: SAddProductPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'seller/edit-product/:id',
     component: SEditProductPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'seller/manage-order',
     component: SOrderPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   },{
     path: 'seller/article',
     component: SDummyContentComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, 
   {
     path: 'seller/detail-order/:id',
     component: SOrderDetailPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   },{
     path: 'seller/profile/:id',
     component: SProfilePageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   }, {
     path: 'seller/change-password/:id',
     component: SChangePasswordPageComponent,
+    canActivate: [AuthGuardService],
     data: {},
   },
 
