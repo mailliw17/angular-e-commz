@@ -9,7 +9,7 @@
       <div class="form-floating">
         <input
           type="email"
-          class="form-control"
+          class="form-control {{submitted ? 'ng-submitted' : ''}}"
           id="email"
           formControlName="email"
           placeholder="Email Address"
@@ -27,7 +27,7 @@
       <div class="form-floating">
         <input
           type="password"
-          class="form-control"
+          class="form-control {{submitted ? 'ng-submitted' : ''}}"
           id="password"
           formControlName="password"
           placeholder="Password"
