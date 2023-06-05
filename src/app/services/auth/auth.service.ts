@@ -21,4 +21,8 @@ export class AuthService {
   getUserById(id: String) {
     return this.http.get<any>(BASE_URL +'/' + id)
   }
+  
+  updateUserData(id:String, data:any) {
+    return this.http.patch(BASE_URL +'/' + id, data)
+  }
 }

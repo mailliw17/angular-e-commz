@@ -223,16 +223,6 @@
   ],
   "users": [
     {
-      "id": "32fa69b4-334a-4e40-8d84-49fb8e4c219b",
-      "name": "Seller asli",
-      "email": "tusucek@mailinator.com",
-      "password": "123",
-      "address": "Quia mollitia archit",
-      "phone_number": 82,
-      "role": "Seller",
-      "created_on": "2023-05-31T03:59:36.349Z"
-    },
-    {
       "id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
       "name": "Buyer asli",
       "email": "liwi@mailinator.com",
@@ -271,6 +261,16 @@
       "phone_number": 27,
       "role": "Buyer",
       "created_on": "2023-06-05T09:13:07.201Z"
+    },
+    {
+      "id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
+      "name": "Seller asli 11",
+      "email": "guzimuhuki11@mailinator.com",
+      "password": "123ok",
+      "address": "Aut veniam aliquid 11",
+      "phone_number": 6711,
+      "role": "Seller",
+      "created_on": "2023-06-05T10:18:07.677Z"
     }
   ]
 }

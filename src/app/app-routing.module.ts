@@ -81,15 +81,7 @@ const routes: Routes = [
     path: 'seller/manage-product',
     component: SManageProductPageComponent,
     data: {},
-  }, {
-    path: 'seller/profile',
-    component: SProfilePageComponent,
-    data: {},
-  }, {
-    path: 'seller/change-password',
-    component: SChangePasswordPageComponent,
-    data: {},
-  }, {
+  },  {
     path: 'seller/simple-report',
     component: SSimpleReportPageComponent,
     data: {},
@@ -113,6 +105,14 @@ const routes: Routes = [
   {
     path: 'seller/detail-order/:id',
     component: SOrderDetailPageComponent,
+    data: {},
+  },{
+    path: 'seller/profile/:id',
+    component: SProfilePageComponent,
+    data: {},
+  }, {
+    path: 'seller/change-password/:id',
+    component: SChangePasswordPageComponent,
     data: {},
   },
 
