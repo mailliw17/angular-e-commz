@@ -115,7 +115,7 @@
       "dest_address": "123 Main St",
       "shipping_price": 10000,
       "waybill_number": 4284,
-      "status": "PAID",
+      "status": "DELIVERY",
       "total_price": 12305000,
       "payment_method": "va_bca",
       "created_on": "2023-06-01T13:34:16.698Z",
@@ -241,6 +241,36 @@
       "phone_number": 66,
       "role": "Buyer",
       "created_on": "2023-05-31T03:59:53.747Z"
+    },
+    {
+      "id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
+      "name": "Modi totam non sed q",
+      "email": "puzas@mailinator.com",
+      "password": "123",
+      "address": "Quae sunt eveniet d",
+      "phone_number": 13,
+      "role": "Seller",
+      "created_on": "2023-06-05T08:25:31.231Z"
+    },
+    {
+      "id": "2f64fddc-922d-48dd-a92c-95be0d7e00dd",
+      "name": "Ullam amet et ipsa",
+      "email": "cacyluliqe@mailinator.com",
+      "password": "123",
+      "address": "Velit voluptatum ad",
+      "phone_number": 30,
+      "role": "Buyer",
+      "created_on": "2023-06-05T09:13:01.840Z"
+    },
+    {
+      "id": "fbaf871e-3efa-4b6c-8ec4-2f98990e01a3",
+      "name": "Consequat Magnam el",
+      "email": "buhici@mailinator.com",
+      "password": "123",
+      "address": "Assumenda est quia d",
+      "phone_number": 27,
+      "role": "Buyer",
+      "created_on": "2023-06-05T09:13:07.201Z"
     }
   ]
 }

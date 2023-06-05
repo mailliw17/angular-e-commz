@@ -16,23 +16,9 @@ export class AuthService {
 
   postUser(data : any) {
     return this.http.post<any>(BASE_URL, data)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
   } 
 
   getUserById(id: String) {
     return this.http.get<any>(BASE_URL +'/' + id)
-      .pipe(
-        map(
-          (res:any) => {
-            return res
-          }
-        )
-      )
   }
 }
