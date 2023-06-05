@@ -1,20 +1,26 @@
-<div>
-  <!-- ngIf utk header buyer / seller -->
-  <app-b-header *ngIf="(urlSplit !== 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-b-header>
-  <app-s-header *ngIf="(urlSplit == 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-s-header>
+<div #auth *ngIf="['login', 'register'].includes(urlSplit)">
+  <router-outlet></router-outlet>
+</div>
 
+<div #buyer_app>
+  <app-b-header *ngIf="!['login', 'register', 'seller'].includes(urlSplit)"></app-b-header>
+
+  <div #auth *ngIf="['login', 'register'].includes(urlSplit)">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="container p-3 d-flex flex-column" style="min-height: calc(100vh - 152.4px);" *ngIf="!['login', 'register', 'seller'].includes(urlSplit)">
+    <router-outlet></router-outlet>
+    <div class="flex-grow-1"></div>
+  </div>
+  <app-b-footer *ngIf="!['login', 'register', 'seller'].includes(urlSplit)"></app-b-footer>
+</div>
+
+<div #seller_app *ngIf="urlSplit === 'seller'">
+  <app-s-header></app-s-header>
   <div class="container p-3 d-flex flex-column" style="min-height: calc(100vh - 152.4px);">
     <router-outlet></router-outlet>
     <div class="flex-grow-1"></div>
   </div>
-
-  <!-- ngIf utk footer buyer / seller -->
-  <app-b-footer *ngIf="(urlSplit !== 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-b-footer>
-  <app-s-footer *ngIf="(urlSplit == 'seller')&&((urlSplit !== 'login') && (urlSplit !== 'register'))"></app-s-footer>
-
+  <app-s-footer></app-s-footer>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
-<!-- <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script> -->

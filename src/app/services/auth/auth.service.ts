@@ -14,9 +14,21 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  encrypt(string: string) {
+    return window.btoa(encodeURIComponent(string));
+  }
+
+  decrypt(string: string) {
+    return decodeURIComponent(window.atob(string));
+  }
+
   postUser(data : any) {
     return this.http.post<any>(BASE_URL, data)
-  } 
+  }
+
+  getUserByEmail(email: String) {
+    return this.http.get<any>(BASE_URL +'?email='+ email)
+  }
 
   getUserById(id: String) {
     return this.http.get<any>(BASE_URL +'/' + id)

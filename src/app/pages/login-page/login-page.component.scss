@@ -12,8 +12,15 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
-  margin-top: 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    max-width: 600px;
+    padding: 48px 24px;
+  }
 }
 
 .form-signin .form-floating:focus-within {
@@ -22,12 +29,8 @@ body {
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-top: 10px;
 }
