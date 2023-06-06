@@ -40,20 +40,19 @@ export class SAddProductPageComponent implements OnInit {
       seller_name : new FormControl(this.sellerInfo[2], Validators.required),
       created_on : new FormControl(new Date(), Validators.required)
     })
-   }
- 
-   getUserDetailFromToken() {
-     this.authService.getUserDetailFromToken()
-       .subscribe(
-         res => {
-             // console.log(res);
-             this.sellerInfo = res
-         },
-         err => {
-           console.log(err);
-         }
-       )
-   }
+  }
+
+  getUserDetailFromToken() {
+    this.authService.getUserDetailFromToken()
+      .subscribe(
+        res => {
+          this.sellerInfo = res
+        },
+        err => {
+          console.log(err);
+        }
+      )
+  }
 
   onSubmit():void {
     this.submitted = true;

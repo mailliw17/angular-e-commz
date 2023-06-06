@@ -9,6 +9,13 @@
       <p><strong>{{ item.price | currency }}</strong></p>
       <small class="card-text">{{ item.description }}</small>
     </div>
+
+    <div class="d-flex justify-content-between align-items-center mt-auto px-3">
+      <small class="text-muted">
+        <i class="bi bi-person-square"></i> {{ item.seller_name }}
+      </small>
+    </div>
+
     <div class="d-flex justify-content-between align-items-center mt-auto px-3 pb-3">
       <small class="text-muted">
         <span class="badge rounded-pill text-bg-success">
@@ -30,6 +37,13 @@
       <div class="card-body py-1">
         <h5 class="card-title fw-normal">{{ item.name }}</h5>
         <h4 class="card-title pb-2">{{ item.price | currency }}</h4>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <small class="text-muted">
+            <i class="bi bi-person-square"></i> {{ item.seller_name }}
+          </small>
+        </div>
+
         <form class="d-flex align-items-center input-group-sm">
           <input type="number" class="form-control" name="qty" [(ngModel)]="item.qty" min="1" [max]="item.stock" (change)="onUpdateQty.emit()" style="width: 80px;">
           <div class="ms-3 me-2">{{ item.stock }}</div>
