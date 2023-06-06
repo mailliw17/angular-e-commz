@@ -43,7 +43,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         if (res[0].password !== this.loginForm.value.password)
           return this.toast.error('Email / Password is Incorect', 'Auth Error');
         
-        let token = this.authService.encrypt(`${res[0].id}-${res[0].email}-${res[0].name}-${res[0].address}-${res[0].role}`);
+        let token = this.authService.encrypt(`${res[0].id}|${res[0].email}|${res[0].name}|${res[0].address}|${res[0].role}`);
         localStorage.setItem('token', token);
         
         if (res[0].role === 'Buyer')

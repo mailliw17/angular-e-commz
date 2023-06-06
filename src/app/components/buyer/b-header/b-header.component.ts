@@ -7,6 +7,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./b-header.component.scss']
 })
 export class BHeaderComponent implements OnInit {
+  isLogin: boolean = false
 
   constructor(
     private router: Router,
@@ -22,5 +23,11 @@ export class BHeaderComponent implements OnInit {
         search: input,
       }
     });
+  }
+
+  checkIsLogin() {
+    if(localStorage.getItem("token")){
+      this.isLogin = true
+    }
   }
 }

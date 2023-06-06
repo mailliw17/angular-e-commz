@@ -11,8 +11,7 @@
       <!-- <form class="col-auto flex-grow-1 mx-3">
         <input type="search" class="form-control" placeholder="Search..." aria-label="Search" routerLink="/catalog">
       </form> -->
-      <h3> <i>Welcome back, Seller 1</i> </h3>
-      <p>{{tampilToken}}</p>
+      <h3> Welcome, {{sellerName}} </h3>
 
       <div class="col-lg-1"></div>
 
@@ -23,14 +22,14 @@
             <i class="bi bi-person" style="font-size: 20px;"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="seller/profile/563fbfc1-c39a-48a8-b3ce-88477cf81dea">Profile</a>
+            <li><a class="dropdown-item" routerLink="seller/profile/{{sellerId}}">Profile</a>
             </li>
-            <li><a class="dropdown-item" routerLink="seller/change-password/563fbfc1-c39a-48a8-b3ce-88477cf81dea">Change
+            <li><a class="dropdown-item" routerLink="seller/change-password/{{sellerId}}">Change
                 Password</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" routerLink="/login">Sign out</a></li>
+            <li><a class="dropdown-item" (click)="onLogout()">Sign out</a></li>
           </ul>
         </div>
       </div>
