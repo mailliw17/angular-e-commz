@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { OrderService } from 'src/app/services/buyer/order.service';
 import { Order } from 'src/app/models/order.model';
 
@@ -22,6 +23,7 @@ export class BMyOrdersPageComponent implements OnInit {
     { name: 'Oldest', value: 'oldest' },
   ];
 
+  buyerInfo: any;
   orders: Order[];
   filteredOrders: Order[];
 
@@ -36,9 +38,13 @@ export class BMyOrdersPageComponent implements OnInit {
     filters: new FormArray([])
   });
 
-  constructor(private orderService: OrderService) { }
+  constructor(
+    private authService : AuthService,
+    private orderService: OrderService
+  ) { }
 
   ngOnInit(): void {
+    this.getUserByToken();
     this.initFilter();
     this.onFetchOrder();
   }
@@ -89,8 +95,16 @@ export class BMyOrdersPageComponent implements OnInit {
     return items?.slice((this.activePage - 1) * this.itemsPerPage, this.activePage * this.itemsPerPage);
   }
 
+  getUserByToken() {
+    this.authService.getUserByToken()
+      .subscribe(
+        res => { this.buyerInfo = res },
+        err => { console.log(err) }
+      )
+  }
+
   onFetchOrder() {
-    let params = { 'user_id' : '0860c0c2-5617-4d5a-bd0b-66acae5f7944'}; //todo: change with logged in
+    let params = { 'user_id' : this.buyerInfo[0]};
     this.orderService.getOrder(params)
     .subscribe(
       res => {

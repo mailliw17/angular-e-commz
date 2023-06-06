@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyOrderDetailPageComponent } from './my-order-detail-page.component';
+import { SAppComponent } from './s-app.component';
 
-describe('MyOrderDetailPageComponent', () => {
-  let component: MyOrderDetailPageComponent;
-  let fixture: ComponentFixture<MyOrderDetailPageComponent>;
+describe('SAppComponent', () => {
+  let component: SAppComponent;
+  let fixture: ComponentFixture<SAppComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyOrderDetailPageComponent ]
+      declarations: [ SAppComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyOrderDetailPageComponent);
+    fixture = TestBed.createComponent(SAppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

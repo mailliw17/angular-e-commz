@@ -7,11 +7,11 @@ import { Order } from 'src/app/models/order.model';
 import { OrderService } from 'src/app/services/buyer/order.service';
 
 @Component({
-  selector: 'app-my-order-detail-page',
-  templateUrl: './my-order-detail-page.component.html',
-  styleUrls: ['./my-order-detail-page.component.scss']
+  selector: 'app-b-my-order-detail-page',
+  templateUrl: './b-my-order-detail-page.component.html',
+  styleUrls: ['./b-my-order-detail-page.component.scss']
 })
-export class MyOrderDetailPageComponent implements OnInit {
+export class BMyOrderDetailPageComponent implements OnInit {
 
   orderId = '';
   order:Order;

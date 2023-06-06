@@ -3,6 +3,7 @@ import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ProductService } from 'src/app/services/buyer/product.service';
 import { CartService } from 'src/app/services/buyer/cart.service';
 import { OrderService } from 'src/app/services/buyer/order.service';
@@ -16,6 +17,7 @@ import * as uuid from 'uuid';
 export class BCheckoutPageComponent implements OnInit, OnDestroy {
 
   order_uuid = uuid.v4();
+  buyerInfo: any;
   
   cart = [];
   subtotal = 0;
@@ -34,13 +36,23 @@ export class BCheckoutPageComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private toast: ToastrService,
+    private authService : AuthService,
     private productService: ProductService,
     private cartService: CartService,
     private orderService: OrderService
   ) { }
 
   ngOnInit(): void {
+    this.getUserByToken();
     this.onFetchCart();
+  }
+
+  getUserByToken() {
+    this.authService.getUserByToken()
+      .subscribe(
+        res => { this.buyerInfo = res },
+        err => { console.log(err) }
+      )
   }
 
   onFetchCart() {
@@ -67,8 +79,8 @@ export class BCheckoutPageComponent implements OnInit, OnDestroy {
     
     let orderPayload = {
       id: this.order_uuid,
-      user_id: "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
-      user_name: "Buyer asli",
+      user_id: this.buyerInfo[0],
+      user_name: this.buyerInfo[2],
       dest_address: this.checkoutForm.value.address,
       shipping_price: this.shipping,
       waybill_number: Math.round(Math.random() * 10000),

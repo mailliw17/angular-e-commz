@@ -39,13 +39,11 @@ export class AuthService {
     return this.http.patch(BASE_URL +'/' + id, data)
   }
 
-  getUserDetailFromToken():Observable<any[]> {
-    var dataUser =  this.decrypt(localStorage.getItem("token"))
-
-    // Find the index of the first occurrence of '|'
-    var splitTheUserData = dataUser.split('|');
-
-    return of(splitTheUserData)
+  getUserByToken():Observable<any[] | boolean> {
+    let token = localStorage.getItem("token");
+    if (!token) return of(false);
+    
+    return of(this.decrypt(token).split('|'));
 
     // this is the index info 
     // [0] id

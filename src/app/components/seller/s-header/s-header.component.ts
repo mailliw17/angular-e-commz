@@ -16,22 +16,20 @@ export class SHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUserDetailFromToken()
+    this.getUserByToken()
   }
 
   onLogout() {
     localStorage.clear()
     this.router.navigate(['/login'])
-    location.reload();
   }
 
   
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
-            // console.log(res);
-            this.sellerInfo = res
+          this.sellerInfo = res
         },
         err => {
           console.log(err);

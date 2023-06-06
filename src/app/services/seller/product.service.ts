@@ -21,12 +21,11 @@ export class ProductService {
     return this.http.post<any>(BASE_URL, data)
   } 
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
           this.detailToken = res
-          // console.log(this.detailToken);
         },
         err => {
           console.log(err);
@@ -35,7 +34,7 @@ export class ProductService {
   }
 
   getProducts() {
-    this.getUserDetailFromToken()
+    this.getUserByToken()
     return this.http.get<any>(BASE_URL + '?seller_id=' + this.detailToken[0] )
   }
 
