@@ -22,12 +22,11 @@ export class SimpleReportService {
     private authService : AuthService,
   ) { }
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
           this.detailToken = res
-          // console.log(this.detailToken);
         },
         err => {
           console.log(err);
@@ -36,7 +35,7 @@ export class SimpleReportService {
   }
 
   countProducts() {
-    this.getUserDetailFromToken()
+    this.getUserByToken()
     return this.http.get<any>(BASE_URL_PRODUCTS+ '?seller_id=' + this.detailToken[0])
   }
 

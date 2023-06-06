@@ -44,7 +44,7 @@ export class BMyOrdersPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUserDetailFromToken();
+    this.getUserByToken();
     this.initFilter();
     this.onFetchOrder();
   }
@@ -95,8 +95,8 @@ export class BMyOrdersPageComponent implements OnInit {
     return items?.slice((this.activePage - 1) * this.itemsPerPage, this.activePage * this.itemsPerPage);
   }
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => { this.buyerInfo = res },
         err => { console.log(err) }

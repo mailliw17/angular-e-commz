@@ -26,7 +26,7 @@ export class SAddProductPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUserDetailFromToken()
+    this.getUserByToken()
 
     this.form = new FormGroup({
       name : new FormControl('', Validators.required),
@@ -42,8 +42,8 @@ export class SAddProductPageComponent implements OnInit {
     })
   }
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
           this.sellerInfo = res

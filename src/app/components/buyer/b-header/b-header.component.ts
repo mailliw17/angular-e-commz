@@ -18,7 +18,7 @@ export class BHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkIsLogin()
-    this.getUserDetailFromToken()
+    this.getUserByToken()
   }
 
   onLogout() {
@@ -42,12 +42,11 @@ export class BHeaderComponent implements OnInit {
     }
   }
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
-            // console.log(res);
-            this.buyerInfo = res
+          this.buyerInfo = res
         },
         err => {
           console.log(err);

@@ -43,12 +43,12 @@ export class BCheckoutPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.getUserDetailFromToken();
+    this.getUserByToken();
     this.onFetchCart();
   }
 
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => { this.buyerInfo = res },
         err => { console.log(err) }

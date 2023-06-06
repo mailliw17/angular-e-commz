@@ -16,7 +16,7 @@ export class SHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUserDetailFromToken()
+    this.getUserByToken()
   }
 
   onLogout() {
@@ -26,12 +26,11 @@ export class SHeaderComponent implements OnInit {
   }
 
   
-  getUserDetailFromToken() {
-    this.authService.getUserDetailFromToken()
+  getUserByToken() {
+    this.authService.getUserByToken()
       .subscribe(
         res => {
-            // console.log(res);
-            this.sellerInfo = res
+          this.sellerInfo = res
         },
         err => {
           console.log(err);
