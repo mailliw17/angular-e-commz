@@ -13,6 +13,7 @@ export class SEditProductPageComponent implements OnInit {
   formValue !:FormGroup
   productModelObj : Product
   id_url = String(this.route.snapshot.params.id);
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -76,6 +77,11 @@ export class SEditProductPageComponent implements OnInit {
   }
 
   onUpdate() {
+    this.submitted = true;
+    if (this.editForm.invalid) {
+      return;
+    }
+
     // console.log(this.editForm.value);
     this.productService.updateProduct(this.id_url, this.editForm.value)
     .subscribe(

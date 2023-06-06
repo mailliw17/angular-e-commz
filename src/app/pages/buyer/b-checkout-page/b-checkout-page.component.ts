@@ -60,7 +60,7 @@ export class BCheckoutPageComponent implements OnInit, OnDestroy {
         product_name: item.name,
         product_qty: item.qty,
         product_price: item.price,
-        product_seller: item.seller_id,
+        product_seller_id: item.seller_id,
         product_seller_name: item.seller_name
       }
     })

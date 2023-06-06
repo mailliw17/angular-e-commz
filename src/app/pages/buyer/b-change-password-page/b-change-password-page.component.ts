@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
-  selector: 'app-s-change-password-page',
-  templateUrl: './s-change-password-page.component.html',
-  styleUrls: ['./s-change-password-page.component.scss']
+  selector: 'app-b-change-password-page',
+  templateUrl: './b-change-password-page.component.html',
+  styleUrls: ['./b-change-password-page.component.scss']
 })
-export class SChangePasswordPageComponent implements OnInit {
+export class BChangePasswordPageComponent implements OnInit {
   id_url = String(this.route.snapshot.params.id);
   submitted = false;
 
@@ -30,13 +30,16 @@ export class SChangePasswordPageComponent implements OnInit {
     this.submitted = true;
     if (this.updatePasswordForm.invalid) {
       return;
+    } else {
+
+      console.log('oke');
     }
 
     this.authService.updateUserData(this.id_url, this.updatePasswordForm.value)
     .subscribe(
       res => {
         alert('Password updated')
-        this.router.navigate(['/seller/dashboard']);
+        this.router.navigate(['/home']);
       },
       err => {
         console.log(err);

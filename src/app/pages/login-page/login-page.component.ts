@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
+  
 
   constructor(
     private router: Router,
@@ -25,6 +26,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   })
 
   ngOnInit(): void {
+   
   }
 
   onLogin() {
@@ -41,13 +43,15 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         if (res[0].password !== this.loginForm.value.password)
           return this.toast.error('Email / Password is Incorect', 'Auth Error');
         
-        let token = this.authService.encrypt(`${res[0].id}-${res[0].email}-${res[0].name}-${res[0].address}-${res[0].role}`);
+        let token = this.authService.encrypt(`${res[0].id}|${res[0].email}|${res[0].name}|${res[0].address}|${res[0].role}`);
         localStorage.setItem('token', token);
         
         if (res[0].role === 'Buyer')
           this.router.navigate(['/'])
-        if (res[0].role === 'Seller')
+        if (res[0].role === 'Seller') {
+          // window.location.reload()
           this.router.navigate(['/seller/dashboard'])
+        }
           
         return this.toast.success('Logged In', 'Success');
       },

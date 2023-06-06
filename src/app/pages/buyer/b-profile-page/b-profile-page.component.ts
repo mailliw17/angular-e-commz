@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
-  selector: 'app-s-profile-page',
-  templateUrl: './s-profile-page.component.html',
-  styleUrls: ['./s-profile-page.component.scss']
+  selector: 'app-b-profile-page',
+  templateUrl: './b-profile-page.component.html',
+  styleUrls: ['./b-profile-page.component.scss']
 })
-export class SProfilePageComponent implements OnInit {
+export class BProfilePageComponent implements OnInit {
   id_url = String(this.route.snapshot.params.id);
   submitted = false;
 
@@ -66,7 +66,7 @@ export class SProfilePageComponent implements OnInit {
     .subscribe(
       res => {
         alert('Profile user updated')
-        this.router.navigate(['/seller/dashboard']);
+        this.router.navigate(['/home']);
       },
       err => {
         console.log(err);
@@ -74,6 +74,5 @@ export class SProfilePageComponent implements OnInit {
     )
     
   }
-
 
 }

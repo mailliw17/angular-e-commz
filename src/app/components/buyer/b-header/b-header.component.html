@@ -9,12 +9,13 @@
       </div>
 
       <form class="col-auto flex-grow-1 mx-3">
-        <input type="search" class="form-control" placeholder="Search catalog by product name..." (input)="onSearch($event.target.value)" aria-label="Search">
+        <input type="search" class="form-control" placeholder="Search catalog by product name..."
+          (input)="onSearch($event.target.value)" aria-label="Search">
       </form>
 
       <div class="col-lg-1"></div>
 
-      <div class="col-auto">
+      <div class="col-auto" *ngIf="isLogin == true">
         <button routerLink="/cart" type="button" class="btn btn-link link-dark position-relative">
           <i class="bi bi-cart3" style="font-size: 20px;"></i>
         </button>
@@ -25,13 +26,22 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/my-orders">My Orders</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/profile/{{buyerInfo[0]}}">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/change-password/{{buyerInfo[0]}}">Change
+                Password</a></li>
+            <li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" (click)="onLogout()">Sign out</a></li>
           </ul>
         </div>
+      </div>
+
+      <div class="col-auto" *ngIf="isLogin == false">
+        <button routerLink="/login" type="button" class="btn btn-link link-dark position-relative">
+          Login
+        </button>
       </div>
     </div>
 

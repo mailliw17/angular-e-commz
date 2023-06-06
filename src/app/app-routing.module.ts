@@ -23,6 +23,9 @@ import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { BProfilePageComponent } from './pages/buyer/b-profile-page/b-profile-page.component';
+import { BChangePasswordPageComponent } from './pages/buyer/b-change-password-page/b-change-password-page.component';
 
 const routes: Routes = [  
   {
@@ -45,6 +48,11 @@ const routes: Routes = [
     component: BHomePageComponent,
     data: {},
   }, {
+    path: 'not-found',
+    component: NotFoundPageComponent,
+    data: {},
+  },  
+  {
     path: 'catalog',
     component: BCatalogPageComponent,
     data: {},
@@ -121,6 +129,12 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     data: {},
   },{
+    path: 'profile/:id',
+    component: BProfilePageComponent,
+    canActivate: [AuthGuardService],
+    data: {},
+  },
+  {
     path: 'seller/profile/:id',
     component: SProfilePageComponent,
     canActivate: [AuthGuardService],
@@ -128,6 +142,11 @@ const routes: Routes = [
   }, {
     path: 'seller/change-password/:id',
     component: SChangePasswordPageComponent,
+    canActivate: [AuthGuardService],
+    data: {},
+  }, {
+    path: 'change-password/:id',
+    component: BChangePasswordPageComponent,
     canActivate: [AuthGuardService],
     data: {},
   },

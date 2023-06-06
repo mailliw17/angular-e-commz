@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 const BASE_URL =
 'http://localhost:3000/products';
@@ -9,17 +10,33 @@ const BASE_URL =
   providedIn: 'root'
 })
 export class ProductService {
+  detailToken : any 
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private authService : AuthService,
   ) { }
 
   postProduct(data : any) {
     return this.http.post<any>(BASE_URL, data)
   } 
 
+  getUserDetailFromToken() {
+    this.authService.getUserDetailFromToken()
+      .subscribe(
+        res => {
+          this.detailToken = res
+          // console.log(this.detailToken);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+  }
+
   getProducts() {
-    return this.http.get<any>(BASE_URL)
+    this.getUserDetailFromToken()
+    return this.http.get<any>(BASE_URL + '?seller_id=' + this.detailToken[0] )
   }
 
   getProductById(id: String) {
