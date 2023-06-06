@@ -48,8 +48,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         
         if (res[0].role === 'Buyer')
           this.router.navigate(['/'])
-        if (res[0].role === 'Seller')
+        if (res[0].role === 'Seller') {
+          // window.location.reload()
           this.router.navigate(['/seller/dashboard'])
+        }
           
         return this.toast.success('Logged In', 'Success');
       },

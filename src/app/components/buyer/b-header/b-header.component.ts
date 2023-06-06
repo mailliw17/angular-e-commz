@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-b-header',
@@ -8,12 +9,22 @@ import { Router } from '@angular/router'
 })
 export class BHeaderComponent implements OnInit {
   isLogin: boolean = false
+  buyerInfo : any = []
 
   constructor(
     private router: Router,
+    private authService : AuthService,
   ) { }
 
   ngOnInit(): void {
+    this.checkIsLogin()
+    this.getUserDetailFromToken()
+  }
+
+  onLogout() {
+    localStorage.clear()
+    this.router.navigate(['/login'])
+    location.reload();
   }
 
   onSearch(input: string) {
@@ -29,5 +40,18 @@ export class BHeaderComponent implements OnInit {
     if(localStorage.getItem("token")){
       this.isLogin = true
     }
+  }
+
+  getUserDetailFromToken() {
+    this.authService.getUserDetailFromToken()
+      .subscribe(
+        res => {
+            // console.log(res);
+            this.buyerInfo = res
+        },
+        err => {
+          console.log(err);
+        }
+      )
   }
 }

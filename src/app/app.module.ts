@@ -39,6 +39,8 @@ import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { BProfilePageComponent } from './pages/buyer/b-profile-page/b-profile-page.component';
+import { BChangePasswordPageComponent } from './pages/buyer/b-change-password-page/b-change-password-page.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,10 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     MyOrderDetailPageComponent,
 
     NotFoundPageComponent,
+
+    BProfilePageComponent,
+
+    BChangePasswordPageComponent,
 
   ],
   imports: [
