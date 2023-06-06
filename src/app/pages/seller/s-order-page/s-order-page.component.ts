@@ -12,20 +12,33 @@ export class SOrderPageComponent implements OnInit {
   userDetails : any
 
   constructor(
-    private orderService : OrderService,
-    private authSevice : AuthService
+    private authService : AuthService,
+    private orderService : OrderService
   ) { }
 
   ngOnInit(): void {
+    this.getUserByToken();
     this.getOrders()
+  }
+  
+  getUserByToken() {
+    this.authService.getUserByToken()
+      .subscribe(
+        res => { this.userDetails = res },
+        err => { console.log(err) }
+      )
   }
 
   getOrders() {
     this.orderService.getOrders()
     .subscribe(
-      res => { 
-        this.orders = res
-        // console.log(this.orders);
+      res => {
+        let filtered = res.filter(order =>
+          order.order_detail.some(detail => 
+            detail.product_seller_id === this.userDetails[0]
+          )
+        )
+        this.orders = filtered;
       },
       err => {
         console.log(err);
