@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class SProfilePageComponent implements OnInit {
   id_url = String(this.route.snapshot.params.id);
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -40,7 +41,7 @@ export class SProfilePageComponent implements OnInit {
 
         this.updateProfileForm = new FormGroup({
           name : new FormControl(res['name'], Validators.required),
-          email : new FormControl(res['email'], Validators.required),
+          email : new FormControl(res['email'], [Validators.required, Validators.email]),
           phone_number : new FormControl(res['phone_number'], Validators.required),
           address : new FormControl(res['address'], Validators.required),
           id : new FormControl(res['id'], Validators.required),
@@ -56,6 +57,11 @@ export class SProfilePageComponent implements OnInit {
   }
 
   onUpdateProfile() {
+    this.submitted = true;
+    if (this.updateProfileForm.invalid) {
+      return;
+    }
+
     this.authService.updateUserData(this.id_url, this.updateProfileForm.value)
     .subscribe(
       res => {

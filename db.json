@@ -1,52 +1,40 @@
 {
   "products": [
     {
-      "name": "PARUP Sofa",
-      "image": "https://www.ikea.co.id/dairyfarm/id/images/288/0728848_PE736539_S4.jpg",
-      "description": "3 seater sofa, vissle grey.",
-      "price": 5395000,
+      "name": "Mouse Logitech",
+      "image": "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/6/21/e62fb6c2-b392-4126-bc57-f65f09ef8166.jpg",
+      "description": "ini mouse",
+      "price": 123000,
       "stock": 2,
-      "category_id": "furniture",
-      "id": "d8922cd4-88d0-4d50-a66f-edc481c07284",
-      "seller_id": "123",
-      "seller_name": "maman",
-      "created_on": "2023-06-01T03:41:26.054Z"
+      "category_id": "electronics",
+      "id": "5680be90-ac76-4188-8277-4cdf55af3fcb",
+      "seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
+      "seller_name": "Seller asli",
+      "created_on": "2023-06-06T07:37:03.888Z"
     },
     {
-      "name": "Blackmores Vitamin C 500mg",
-      "image": "https://www.blackmores.com.my/-/media/project/blackmores/malaysia/images/products03/bm-2021_vitamin-c-500mg-60tabs.png?h=1438&iar=0&w=1092&hash=95F3CF6ADF4F979EE40AF49502807120",
-      "description": "60 tabs of 500mg vit c",
-      "price": 117750,
-      "stock": 10,
+      "name": "Pepsodent",
+      "image": "https://www.simpleskincare.com/sk-eu/content/dam/brands/pepsodent/indonesia/64887685-pgb-225g-fop.jpg",
+      "description": "Proident porro eaqu",
+      "price": 12000,
+      "stock": 52,
       "category_id": "health_products",
-      "id": "zxesd1a6-127c-40ew-b38a-9a918as3290c",
-      "seller_id": "123",
-      "seller_name": "maman",
-      "created_on": "2023-06-01T03:41:43.726Z"
+      "id": "cb702d21-d903-4765-a914-e52cd193e5a8",
+      "seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
+      "seller_name": "Seller asli",
+      "created_on": "2023-06-06T07:37:32.978Z"
     },
     {
-      "name": "Nike Foamposite One",
-      "image": "https://cf.shopee.co.id/file/41c8ea0125b0a61da4414394c7f87151",
-      "description": "Abalone colorway.",
-      "price": 3450000,
-      "stock": 0,
-      "category_id": "clothing",
-      "id": "beeff1a6-517c-40ed-b38a-9a918aae590c",
-      "seller_id": "123",
-      "seller_name": "maman",
-      "created_on": "2023-06-01T03:41:43.726Z"
-    },
-    {
-      "name": "Adidas Ultra Boost 20",
-      "image": "https://pbs.twimg.com/media/EKajHPNWsAAHdYM?format=jpg&name=small",
-      "description": "Dash Grey Blue Violet colorway.",
-      "price": 2338000,
-      "stock": 3,
-      "category_id": "clothing",
-      "id": "fd2312fd-517c-80dd-b55a-dsgvnaa3420c",
-      "seller_id": "123",
-      "seller_name": "maman",
-      "created_on": "2023-06-01T03:41:43.726Z"
+      "name": "Consequat Quis dolo",
+      "image": "https://www.masakapahariini.com/wp-content/uploads/2022/10/olahan-jamur-tiram.jpg",
+      "description": "ini jamur",
+      "price": 8100,
+      "stock": 37,
+      "category_id": "household_items",
+      "id": "dace6835-aa77-4cf5-b029-e25602e90cab",
+      "seller_id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
+      "seller_name": "Modi totam non sed q",
+      "created_on": "2023-06-06T07:47:58.877Z"
     }
   ],
   "orders": [
@@ -67,16 +55,16 @@
           "product_name": "sikat gigi",
           "product_qty": 2,
           "product_price": 12000,
-          "product_seller_id": "32fa69b4-334a-4e40-8d84-49fb8e4c219b",
-          "product_seller_name": "maman"
+          "product_seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
+          "product_seller_name": "Seller asli"
         },
         {
           "product_image": "https://dummyimage.com/600x400/de2fde/232ec2",
           "product_name": "sikat",
           "product_qty": 3,
           "product_price": 13000,
-          "product_seller": "32fa69b4-334a-4e40-8d84-49fb8e4c219b",
-          "product_seller_name": "maman"
+          "product_seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
+          "product_seller_name": "Seller asli"
         }
       ]
     },
@@ -97,14 +85,15 @@
           "product_name": "royco",
           "product_qty": 2,
           "product_price": 12000,
-          "product_seller": "32fa69b4-334a-4e40-8d84-49fb8e4c219b"
+          "product_seller_id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
+          "product_seller_name": "Modi totam non sed q"
         },
         {
           "product_image": "https://dummyimage.com/600x400/de2fde/232ec2",
           "product_name": "kipas",
           "product_qty": 3,
-          "product_price": 13000,
-          "product_seller": "32fa69b4-334a-4e40-8d84-49fb8e4c219b"
+          "product_seller_id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
+          "product_seller_name": "Modi totam non sed q"
         }
       ]
     },
@@ -264,11 +253,11 @@
     },
     {
       "id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-      "name": "Seller asli 11",
-      "email": "guzimuhuki11@mailinator.com",
-      "password": "123ok",
-      "address": "Aut veniam aliquid 11",
-      "phone_number": 6711,
+      "name": "Seller asli",
+      "email": "sellerasli@mailinator.com",
+      "password": "123",
+      "address": "Jalan mangga",
+      "phone_number": 81234566546,
       "role": "Seller",
       "created_on": "2023-06-05T10:18:07.677Z"
     },

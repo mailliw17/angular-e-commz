@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class SChangePasswordPageComponent implements OnInit {
   id_url = String(this.route.snapshot.params.id);
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -26,6 +27,11 @@ export class SChangePasswordPageComponent implements OnInit {
   }
 
   onUpdatePassword() {
+    this.submitted = true;
+    if (this.updatePasswordForm.invalid) {
+      return;
+    }
+
     this.authService.updateUserData(this.id_url, this.updatePasswordForm.value)
     .subscribe(
       res => {

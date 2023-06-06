@@ -13,6 +13,7 @@ import * as uuid from 'uuid';
 export class RegisterPageComponent implements OnInit {
   userModel : User
   uuid = uuid.v4()
+  submitted = false;
 
   constructor(
     private authService : AuthService,
@@ -22,7 +23,7 @@ export class RegisterPageComponent implements OnInit {
   registerForm = new FormGroup({
     id : new FormControl(this.uuid, Validators.required),
     name : new FormControl('', Validators.required),
-    email : new FormControl('', Validators.required),
+    email : new FormControl('', [Validators.required, Validators.email]),
     password : new FormControl('', Validators.required),
     address : new FormControl('', Validators.required),
     phone_number : new FormControl('', Validators.required),
@@ -35,6 +36,11 @@ export class RegisterPageComponent implements OnInit {
   }
 
   onRegister() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+
     this.authService.postUser(this.registerForm.value)
       .subscribe(
         res => {

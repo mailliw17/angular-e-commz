@@ -8,8 +8,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./s-header.component.scss']
 })
 export class SHeaderComponent implements OnInit {
-  sellerName : String
-  sellerId : String
+  sellerInfo : any = []
 
   constructor(
     private authService : AuthService,
@@ -28,17 +27,15 @@ export class SHeaderComponent implements OnInit {
 
   
   getUserDetailFromToken() {
-    var dataUser =  this.authService.decrypt(localStorage.getItem("token"))
-
-    // Find the index of the first occurrence of '|'
-    const splitTheUserData = dataUser.split('|');
-
-    // Extract the substring from the start of the token to the first dash index
-    this.sellerId = splitTheUserData[0]
-    this.sellerName = splitTheUserData[2]
-    // this.sellerName = dataUser.substring(1, splitTheUserData);
-
-    // console.log(splitTheUserData);
-    // console.log(this.sellerId);
+    this.authService.getUserDetailFromToken()
+      .subscribe(
+        res => {
+            // console.log(res);
+            this.sellerInfo = res
+        },
+        err => {
+          console.log(err);
+        }
+      )
   }
 }

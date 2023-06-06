@@ -1,23 +1,50 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- <input type="text" formControlName="seller_id" class="form-control" [hidden]="false" [value]="this.sellerInfo[0]">
+  <input type="text" formControlName="seller_name" class="form-control" [hidden]="false"> -->
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Name</label>
     <input type="text" formControlName="name" class="form-control">
+    <span *ngIf="
+      (submitted && form.get('name').errors) || 
+      (form.get('name').errors && form.get('name').touched)" style="color: red;">
+      Please enter a valid name!
+    </span>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Image URL</label>
     <input type="text" formControlName="image" class="form-control">
+    <span *ngIf="
+    (submitted && form.get('image').errors) || 
+    (form.get('image').errors && form.get('image').touched)" style="color: red;">
+      Please enter a valid image URL!
+    </span>
   </div>
   <div class="input-group">
     <span class="input-group-text">Description</span>
     <textarea class="form-control" formControlName="description" aria-label="With textarea"></textarea>
+    <span *ngIf="
+    (submitted && form.get('description').errors) || 
+    (form.get('description').errors && form.get('description').touched)" style="color: red;">
+      Please enter a valid description!
+    </span>
   </div>
   <div class="mb-3 mt-3">
     <label for="exampleFormControlInput1" class="form-label">Price</label>
     <input type="number" formControlName="price" class="form-control">
+    <span *ngIf="
+    (submitted && form.get('price').errors) || 
+    (form.get('price').errors && form.get('price').touched)" style="color: red;">
+      Please enter a valid price!
+    </span>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Stock</label>
     <input type="number" formControlName="stock" class="form-control">
+    <span *ngIf="
+    (submitted && form.get('stock').errors) || 
+    (form.get('stock').errors && form.get('stock').touched)" style="color: red;">
+      Please enter a valid stock!
+    </span>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Category</label>
@@ -29,6 +56,11 @@
       <option ngValue="health_products">Health Products</option>
       <option ngValue="household_items">Household Items</option>
     </select>
+    <span *ngIf="
+    (submitted && form.get('category_id').errors) || 
+    (form.get('category_id').errors && form.get('category_id').touched)" style="color: red;">
+      Please select a valid category!
+    </span>
   </div>
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
