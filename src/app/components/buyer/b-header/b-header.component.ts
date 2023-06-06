@@ -24,7 +24,6 @@ export class BHeaderComponent implements OnInit {
   onLogout() {
     localStorage.clear()
     this.router.navigate(['/login'])
-    location.reload();
   }
 
   onSearch(input: string) {
