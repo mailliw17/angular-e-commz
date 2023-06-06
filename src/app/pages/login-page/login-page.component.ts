@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
+  
 
   constructor(
     private router: Router,
@@ -25,6 +26,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   })
 
   ngOnInit(): void {
+   
   }
 
   onLogin() {

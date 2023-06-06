@@ -271,6 +271,16 @@
       "phone_number": 6711,
       "role": "Seller",
       "created_on": "2023-06-05T10:18:07.677Z"
+    },
+    {
+      "id": "04cb87dd-d252-44ac-b4f2-4ff04d35d522",
+      "name": "Est est tempor asp",
+      "email": "budynu@mailinator.com",
+      "password": "123",
+      "address": "Sed esse placeat v",
+      "phone_number": 70,
+      "role": "Seller",
+      "created_on": "2023-06-06T00:56:47.905Z"
     }
   ]
 }

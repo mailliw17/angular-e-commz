@@ -38,6 +38,7 @@ import { SOrderPageComponent } from './pages/seller/s-order-page/s-order-page.co
 import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-order-detail-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,8 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     RegisterPageComponent,
 
     MyOrderDetailPageComponent,
+
+    NotFoundPageComponent,
 
   ],
   imports: [

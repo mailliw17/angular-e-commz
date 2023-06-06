@@ -23,6 +23,7 @@ import { SOrderDetailPageComponent } from './pages/seller/s-order-detail-page/s-
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [  
   {
@@ -45,6 +46,12 @@ const routes: Routes = [
     component: BHomePageComponent,
     data: {},
   }, {
+    path: 'not-found',
+    component: NotFoundPageComponent,
+    canActivate: [AuthGuardService],
+    data: {},
+  },  
+  {
     path: 'catalog',
     component: BCatalogPageComponent,
     data: {},
