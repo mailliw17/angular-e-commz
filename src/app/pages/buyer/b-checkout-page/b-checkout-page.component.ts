@@ -13,7 +13,7 @@ import * as uuid from 'uuid';
   templateUrl: './b-checkout-page.component.html',
   styleUrls: ['./b-checkout-page.component.scss']
 })
-export class BCheckoutPageComponent implements OnInit {
+export class BCheckoutPageComponent implements OnInit, OnDestroy {
 
   order_uuid = uuid.v4();
   

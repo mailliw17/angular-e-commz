@@ -1,21 +1,52 @@
-<main class="form-signin w-100 m-auto">
-  <form>
-    <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-    <h1 class="h3 mb-3 fw-normal text-center">LOGIN</h1>
+<main class="form-signin">
+  <div class="card shadow-sm bg-light">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+      <h1 class="h3 mb-3 fw-normal text-center">
+        <i class="bi bi-bootstrap-fill text-success" style="font-size: 32px;"></i> LOGIN
+      </h1>
 
-    <div class="form-floating ">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating ">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-    <div class="m-4 text-center">
-      <a routerLink="/register">Don't have account? Register here</a>
-    </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control {{submitted ? 'ng-submitted' : ''}}"
+          id="email"
+          formControlName="email"
+          placeholder="Email Address"
+        >
+        <label for="email">Email address</label>
+        <span
+          *ngIf="
+            (submitted && loginForm.get('email').errors) || 
+            (loginForm.get('email').errors && loginForm.get('email').touched)"
+          style="color: red;"
+        >
+          Please enter a valid email!
+        </span>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control {{submitted ? 'ng-submitted' : ''}}"
+          id="password"
+          formControlName="password"
+          placeholder="Password"
+        >
+        <label for="password">Password</label>
+        <span
+          *ngIf="
+            (submitted && loginForm.get('password').errors) || 
+            (loginForm.get('password').errors && loginForm.get('password').touched)"
+          style="color: red;"
+        >
+          Please enter a password!
+        </span>
+      </div>
+      <div class="m-4 text-center">
+        <a routerLink="/register">Don't have account? Register here</a>
+      </div>
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">LOGIN</button>
-    <!-- <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p> -->
-  </form>
+      <button class="w-100 btn btn-lg btn-success" type="submit">LOGIN</button>
+    </form>
+  </div>
 </main>
