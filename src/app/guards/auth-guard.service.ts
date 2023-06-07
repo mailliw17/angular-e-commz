@@ -22,16 +22,20 @@ export class AuthGuardService implements CanActivate {
       return false;
     }
 
-    // decrypt token & split by '-'
-    this.userToken =  this.authService.decrypt(localStorage.getItem('token')).split('-');
-    // extract the Role value
-    const userRole = this.userToken[this.userToken.length - 1];
-
-    // validate if the Role is allowed to access url
-    if (routeSnap.data.role !== userRole) {
-      this.router.navigate(['not-found']);
-      return false;
-    }
+    this.authService.getUserByToken()
+    .subscribe( 
+      res => {
+        console.log(res);
+        console.log(routeSnap.data.role);
+          if (routeSnap.data.role !== res[4]) {
+            this.router.navigate(['not-found']);
+            return false;
+          }
+      },
+      err => {
+        console.log(err);
+      }
+    )
 
     return true;
   }
