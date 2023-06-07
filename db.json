@@ -45,7 +45,7 @@
       "dest_address": "Jalan timoho",
       "shipping_price": 10000,
       "waybill_number": 3179,
-      "status": "PAID",
+      "status": "DELIVERY",
       "total_price": 145000,
       "payment_method": "qris",
       "created_on": "2023-06-06T09:49:59.233Z",
@@ -71,64 +71,24 @@
   ],
   "users": [
     {
-      "id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
-      "name": "Buyer asli 11",
-      "email": "liwi11@mailinator.com",
-      "password": "123",
-      "address": "Vero est ratione al 11",
-      "phone_number": 6611,
-      "role": "Buyer",
-      "created_on": "2023-05-31T03:59:53.747Z"
-    },
-    {
-      "id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
-      "name": "Modi totam non sed q",
-      "email": "puzas@mailinator.com",
-      "password": "123",
-      "address": "Quae sunt eveniet d",
-      "phone_number": 13,
-      "role": "Seller",
-      "created_on": "2023-06-05T08:25:31.231Z"
-    },
-    {
-      "id": "2f64fddc-922d-48dd-a92c-95be0d7e00dd",
-      "name": "Ullam amet et ipsa",
-      "email": "cacyluliqe@mailinator.com",
-      "password": "123",
-      "address": "Velit voluptatum ad",
-      "phone_number": 30,
-      "role": "Buyer",
-      "created_on": "2023-06-05T09:13:01.840Z"
-    },
-    {
-      "id": "fbaf871e-3efa-4b6c-8ec4-2f98990e01a3",
-      "name": "Consequat Magnam el",
-      "email": "buhici@mailinator.com",
-      "password": "123",
-      "address": "Assumenda est quia d",
-      "phone_number": 27,
-      "role": "Buyer",
-      "created_on": "2023-06-05T09:13:07.201Z"
-    },
-    {
-      "id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-      "name": "Seller asli",
+      "id": "27b3f03e-db25-4b75-a16c-397468600efc",
+      "name": "Seller Asli",
       "email": "sellerasli@mailinator.com",
-      "password": "123",
-      "address": "Jalan mangga",
-      "phone_number": 81234566546,
+      "password": "MTIzb2s=",
+      "address": "Minima dolor velit o",
+      "phone_number": 22,
       "role": "Seller",
-      "created_on": "2023-06-05T10:18:07.677Z"
+      "created_on": "2023-06-07T04:29:28.259Z"
     },
     {
-      "id": "04cb87dd-d252-44ac-b4f2-4ff04d35d522",
-      "name": "Est est tempor asp",
-      "email": "budynu@mailinator.com",
-      "password": "321",
-      "address": "Sed esse placeat v",
-      "phone_number": 70,
-      "role": "Seller",
-      "created_on": "2023-06-06T00:56:47.905Z"
+      "id": "1e83c612-6b4a-416a-ae70-ba80993fda0e",
+      "name": "Buyer Asli",
+      "email": "buyerasli@mailinator.com",
+      "password": "MTIzb2s=",
+      "address": "Quia tempor quis qui",
+      "phone_number": 40,
+      "role": "Buyer",
+      "created_on": "2023-06-07T04:37:23.518Z"
     }
   ]
 }

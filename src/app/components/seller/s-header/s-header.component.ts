@@ -30,6 +30,7 @@ export class SHeaderComponent implements OnInit {
       .subscribe(
         res => {
           this.sellerInfo = res
+          // console.log(this.sellerInfo);
         },
         err => {
           console.log(err);

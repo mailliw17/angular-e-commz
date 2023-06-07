@@ -38,7 +38,10 @@ import { SChangePasswordPageComponent } from './pages/seller/s-change-password-p
 import { SDummyContentComponent } from './components/seller/s-dummy-content/s-dummy-content.component';
 
 const routes: Routes = [
-
+  //relative path
+  // kalau ada / di depan path,dia akan buat semua path dibelakang localhost:4200 trus baru tambahin /login
+  // kalau gaada / di depan path, dia ga buang current path dan langsung nambah path login di belakang 
+  
   {
     path: '',
     redirectTo: '/home',
