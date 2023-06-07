@@ -72,6 +72,8 @@ const routes: Routes = [
       }, {
         path: 'product-detail/:id',
         component: BProductDetailPageComponent,
+        canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'my-orders',
         component: BMyOrdersPageComponent,
