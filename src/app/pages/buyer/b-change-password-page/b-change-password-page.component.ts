@@ -42,12 +42,17 @@ export class BChangePasswordPageComponent implements OnInit {
     .subscribe(
       res => {
         alert('Password updated')
-        this.router.navigate(['/home']);
+        this.onLogout()
       },
       err => {
         console.log(err);
       }
     )
+  }
+
+  onLogout() {
+    localStorage.clear()
+    this.router.navigate(['/login'])
   }
 
 }
