@@ -20,7 +20,7 @@ export class SChangePasswordPageComponent implements OnInit {
 
   updatePasswordForm = new FormGroup({
     password : new FormControl('', Validators.required),
-    id : new FormControl('', Validators.required),
+    id : new FormControl(this.id_url, Validators.required),
   })
 
   ngOnInit(): void {
@@ -31,6 +31,12 @@ export class SChangePasswordPageComponent implements OnInit {
     if (this.updatePasswordForm.invalid) {
       return;
     }
+
+    let encryptPassword = this.authService.encrypt(this.updatePasswordForm.value.password);
+
+    this.updatePasswordForm.patchValue({  
+      password: encryptPassword
+    })
 
     this.authService.updateUserData(this.id_url, this.updatePasswordForm.value)
     .subscribe(

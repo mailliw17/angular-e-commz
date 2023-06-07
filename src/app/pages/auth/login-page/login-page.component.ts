@@ -40,7 +40,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       res => {
         if (!res.length)
           return this.toast.error('Email / Password is Incorect', 'Auth Error');
-        if (res[0].password !== this.loginForm.value.password)
+
+        let encryptPassword = this.authService.encrypt(this.loginForm.value.password);
+
+        if (res[0].password !== encryptPassword)
           return this.toast.error('Email / Password is Incorect', 'Auth Error');
         
         let token = this.authService.encrypt(`${res[0].id}|${res[0].email}|${res[0].name}|${res[0].address}|${res[0].role}`);

@@ -3,7 +3,7 @@
   <input type="text" formControlName="seller_name" class="form-control" [hidden]="false"> -->
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Name</label>
-    <input type="text" formControlName="name" class="form-control">
+    <input type="text" formControlName="name" class="form-control {{submitted ? 'ng-submitted' : ''}}">
     <span *ngIf="
       (submitted && form.get('name').errors) || 
       (form.get('name').errors && form.get('name').touched)" style="color: red;">
@@ -12,7 +12,7 @@
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Image URL</label>
-    <input type="text" formControlName="image" class="form-control">
+    <input type="text" formControlName="image" class="form-control {{submitted ? 'ng-submitted' : ''}}">
     <span *ngIf="
     (submitted && form.get('image').errors) || 
     (form.get('image').errors && form.get('image').touched)" style="color: red;">
@@ -21,7 +21,8 @@
   </div>
   <div class="input-group">
     <span class="input-group-text">Description</span>
-    <textarea class="form-control" formControlName="description" aria-label="With textarea"></textarea>
+    <textarea class="form-control {{submitted ? 'ng-submitted' : ''}}" formControlName="description"
+      aria-label="With textarea"></textarea>
     <span *ngIf="
     (submitted && form.get('description').errors) || 
     (form.get('description').errors && form.get('description').touched)" style="color: red;">
@@ -30,7 +31,7 @@
   </div>
   <div class="mb-3 mt-3">
     <label for="exampleFormControlInput1" class="form-label">Price</label>
-    <input type="number" formControlName="price" class="form-control">
+    <input type="number" formControlName="price" class="form-control {{submitted ? 'ng-submitted' : ''}}">
     <span *ngIf="
     (submitted && form.get('price').errors) || 
     (form.get('price').errors && form.get('price').touched)" style="color: red;">
@@ -39,7 +40,7 @@
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Stock</label>
-    <input type="number" formControlName="stock" class="form-control">
+    <input type="number" formControlName="stock" class="form-control {{submitted ? 'ng-submitted' : ''}}">
     <span *ngIf="
     (submitted && form.get('stock').errors) || 
     (form.get('stock').errors && form.get('stock').touched)" style="color: red;">
