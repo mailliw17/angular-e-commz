@@ -67,36 +67,43 @@ const routes: Routes = [
         path: 'catalog',
         component: BCatalogPageComponent,
       }, {
+        path: 'product-detail/:id',
+        component: BProductDetailPageComponent,
+      }, {
         path: 'my-orders',
         component: BMyOrdersPageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'my-order-detail/:id',
         component: BMyOrderDetailPageComponent,
         canActivate: [AuthGuardService],
-      }, {
-        path: 'product-detail/:id',
-        component: BProductDetailPageComponent,
+        data: {role: 'Buyer'},
       }, {
         path: 'cart',
         component: BCartPageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'checkout',
         component: BCheckoutPageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'payment',
         component: BPaymentPageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'profile/:id',
         component: BProfilePageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       }, {
         path: 'change-password/:id',
         component: BChangePasswordPageComponent,
         canActivate: [AuthGuardService],
+        data: {role: 'Buyer'},
       },
     ],
   },
@@ -104,47 +111,39 @@ const routes: Routes = [
   {
     path: 'seller',
     component: SAppComponent,
+    canActivate: [AuthGuardService],
+    data: {role: 'Seller'},
     children: [
       {
         path: 'dashboard',
         component: SDashboardPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'manage-product',
         component: SManageProductPageComponent,
-        canActivate: [AuthGuardService],
       },  {
         path: 'simple-report',
         component: SSimpleReportPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'add-product',
         component: SAddProductPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'edit-product/:id',
         component: SEditProductPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'manage-order',
         component: SOrderPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'article',
         component: SDummyContentComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'detail-order/:id',
         component: SOrderDetailPageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'profile/:id',
         component: SProfilePageComponent,
-        canActivate: [AuthGuardService],
       }, {
         path: 'change-password/:id',
         component: SChangePasswordPageComponent,
-        canActivate: [AuthGuardService],
       },
     ]
   }
