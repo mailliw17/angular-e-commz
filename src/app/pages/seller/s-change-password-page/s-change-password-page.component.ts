@@ -42,12 +42,17 @@ export class SChangePasswordPageComponent implements OnInit {
     .subscribe(
       res => {
         alert('Password updated')
-        this.router.navigate(['/seller/dashboard']);
+        this.onLogout()
       },
       err => {
         console.log(err);
       }
     )
+  }
+
+  onLogout() {
+    localStorage.clear()
+    this.router.navigate(['/login'])
   }
 
 }

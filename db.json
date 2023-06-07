@@ -1,80 +1,12 @@
 {
-  "products": [
-    {
-      "name": "Mouse Logitech",
-      "image": "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/6/21/e62fb6c2-b392-4126-bc57-f65f09ef8166.jpg",
-      "description": "ini mouse",
-      "price": 123000,
-      "stock": 2,
-      "category_id": "electronics",
-      "id": "5680be90-ac76-4188-8277-4cdf55af3fcb",
-      "seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-      "seller_name": "Seller asli",
-      "created_on": "2023-06-06T07:37:03.888Z"
-    },
-    {
-      "name": "Pepsodent",
-      "image": "https://www.simpleskincare.com/sk-eu/content/dam/brands/pepsodent/indonesia/64887685-pgb-225g-fop.jpg",
-      "description": "Proident porro eaqu",
-      "price": 12000,
-      "stock": 48,
-      "category_id": "health_products",
-      "id": "cb702d21-d903-4765-a914-e52cd193e5a8",
-      "seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-      "seller_name": "Seller asli",
-      "created_on": "2023-06-06T07:37:32.978Z"
-    },
-    {
-      "name": "Consequat Quis dolo",
-      "image": "https://www.masakapahariini.com/wp-content/uploads/2022/10/olahan-jamur-tiram.jpg",
-      "description": "ini jamur",
-      "price": 8100,
-      "stock": 35,
-      "category_id": "household_items",
-      "id": "dace6835-aa77-4cf5-b029-e25602e90cab",
-      "seller_id": "6d56c9f7-259b-4c0e-90a1-072aa5fec2bc",
-      "seller_name": "Modi totam non sed q",
-      "created_on": "2023-06-06T07:47:58.877Z"
-    }
-  ],
-  "orders": [
-    {
-      "id": "4a416d40-697d-49cd-948d-930dabd552c7",
-      "user_id": "0860c0c2-5617-4d5a-bd0b-66acae5f7944",
-      "user_name": "Buyer asli",
-      "dest_address": "Jalan timoho",
-      "shipping_price": 10000,
-      "waybill_number": 3179,
-      "status": "DELIVERY",
-      "total_price": 145000,
-      "payment_method": "qris",
-      "created_on": "2023-06-06T09:49:59.233Z",
-      "order_detail": [
-        {
-          "product_image": "https://www.simpleskincare.com/sk-eu/content/dam/brands/pepsodent/indonesia/64887685-pgb-225g-fop.jpg",
-          "product_name": "Pepsodent",
-          "product_qty": 1,
-          "product_price": 12000,
-          "product_seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-          "product_seller_name": "Seller asli"
-        },
-        {
-          "product_image": "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/6/21/e62fb6c2-b392-4126-bc57-f65f09ef8166.jpg",
-          "product_name": "Mouse Logitech",
-          "product_qty": 1,
-          "product_price": 123000,
-          "product_seller_id": "563fbfc1-c39a-48a8-b3ce-88477cf81dea",
-          "product_seller_name": "Seller asli"
-        }
-      ]
-    }
-  ],
+  "products": [],
+  "orders": [],
   "users": [
     {
       "id": "27b3f03e-db25-4b75-a16c-397468600efc",
       "name": "Seller Asli",
       "email": "sellerasli@mailinator.com",
-      "password": "MTIzb2s=",
+      "password": "MTIz",
       "address": "Minima dolor velit o",
       "phone_number": 22,
       "role": "Seller",
