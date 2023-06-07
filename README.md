@@ -1,8 +1,16 @@
 # Simple E-Commerce - Task Training Angular - BCA
 
-## By Franz Mikael & William
+> By Franz Mikael & William
 
-> Hope this way can make our integration come easier dude
+## How to run project local
+
+- Clone and `npm install`
+- Open your CMD
+- Type `ng serve`
+- Open another CMD
+- Type `json-server --watch db.json`
+- Open http://localhost:4200 for the website
+- Open http://localhost:3000 for the JSON serve rdata
 
 ## DO THIS FIRST !!
 

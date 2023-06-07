@@ -1,26 +1,10 @@
 {
-  "products": [],
-  "orders": [],
+  "products": [
+  ],
+  "orders": [
+    
+  ],
   "users": [
-    {
-      "id": "27b3f03e-db25-4b75-a16c-397468600efc",
-      "name": "Seller Asli",
-      "email": "sellerasli@mailinator.com",
-      "password": "MTIz",
-      "address": "Minima dolor velit o",
-      "phone_number": 22,
-      "role": "Seller",
-      "created_on": "2023-06-07T04:29:28.259Z"
-    },
-    {
-      "id": "1e83c612-6b4a-416a-ae70-ba80993fda0e",
-      "name": "Buyer Asli",
-      "email": "buyerasli@mailinator.com",
-      "password": "MTIz",
-      "address": "Quia tempor quis qui",
-      "phone_number": 40,
-      "role": "Buyer",
-      "created_on": "2023-06-07T04:37:23.518Z"
-    }
+   
   ]
 }
